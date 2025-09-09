@@ -1,12 +1,14 @@
-import FormCadastro from './components/Form'
-import './App.css'
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/home.jsx";
 
 function App() {
-  
-
   return (
-    <FormCadastro />
-  )
+    <div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </div>
+  );
 }
 
-export default App
+export default App;
