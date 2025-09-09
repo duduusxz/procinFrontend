@@ -1,0 +1,29 @@
+.perfil_lateral {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem 0;
+  max-width: 50vw;
+  min-width: 20vw;
+  height: 100vh;
+  padding: 1rem 0;
+  background-color: #ffffff;
+  color: black;
+}
+
+.perfil_lateral p {
+  width: 100%;
+  word-break: break-word;
+}
+
+.logo{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.logo img{
+    width: 140px;
+    align-self: flex-start;
+    display: block;
+}
