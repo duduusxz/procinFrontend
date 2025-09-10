@@ -109,6 +109,7 @@ export default function Home() {
               <h2>Nome produtos</h2>
               <p>Localização</p>
               <h2>R$:00,00</h2>
+              <button>Adicionar ao carrinho</button>
             </div>
           </div>
           <div className={styles.bloco}>
@@ -123,6 +124,7 @@ export default function Home() {
               <h2>Nome produtos</h2>
               <p>Localização</p>
               <h2>R$:00,00</h2>
+              <button>Adicionar ao carrinho</button>
             </div>
           </div>
           <div className={styles.bloco}>
@@ -137,6 +139,7 @@ export default function Home() {
               <h2>Nome produtos</h2>
               <p>Localização</p>
               <h2>R$:00,00</h2>
+              <button>Adicionar ao carrinho</button>
             </div>
           </div>
           <div className={styles.bloco}>
@@ -151,9 +154,9 @@ export default function Home() {
               <h2>Nome produtos</h2>
               <p>Localização</p>
               <h2>R$:00,00</h2>
+              <button>Adicionar ao carrinho</button>
             </div>
           </div>
-          
         </div>
       </main>
     </div>

@@ -229,7 +229,7 @@
 }
 .produtos {
   padding: 60px 20px;
-  background-color: #ff0000;
+  background-color: #ffffff;
   text-align: start;
   display: flex;
   flex-direction: row;
@@ -243,15 +243,15 @@
   background-color: #ffffff;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(9, 13, 226, 0.1);
+  box-shadow: 0 4px 15px rgba(9, 13, 226, 0.1);
   transition: all 0.3s ease;
   max-width: 400px;
-  border: #4a90e2 solid 4px;
-  border-radius: 23px;
+  display: flex;
+  flex-direction: row;
 }
 .bloco:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 12px 12px rgba(0, 0, 0, 0.2);
 }
 .bloco img {
   width: 100%;
@@ -262,5 +262,17 @@
 }
 .bloco:hover img {
   transform: scale(1.05);
+}
+.bloco button {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
 }
 
