@@ -6,7 +6,7 @@ import acessorios from "../assets/acessorios.png"
 import eletronicos from "../assets/eletronicos.jpg"
 import logoBranca from "../assets/logoBranca.png";
 import coracao from "../assets/coracao.png";
-import carrinho from "../assets/export.png"; // Assumindo que export.png é o carrinho
+import carrinho from "../assets/export.png";
 import perfil from "../assets/perfil.png";
 
 import styles from "../style/Home.module.css";
@@ -92,6 +92,68 @@ export default function Home() {
               ›
             </button>
           </div>
+        </div>
+
+        {/* Fim do Carrosel */}
+
+        <div className={styles.produtos}>
+          <div className={styles.bloco}>
+            <div className={styles.topo}>
+              <div className={styles.estrelas}>
+                <span>★ ★ ★ ★ ☆</span>
+                4.0
+              </div>
+              <img src="" alt="" />
+            </div>
+            <div className={styles.inferior}>
+              <h2>Nome produtos</h2>
+              <p>Localização</p>
+              <h2>R$:00,00</h2>
+            </div>
+          </div>
+          <div className={styles.bloco}>
+            <div className={styles.topo}>
+              <div className={styles.estrelas}>
+                <span>★ ★ ★ ★ ☆</span>
+                4.0
+              </div>
+              <img src="" alt="" />
+            </div>
+            <div className={styles.inferior}>
+              <h2>Nome produtos</h2>
+              <p>Localização</p>
+              <h2>R$:00,00</h2>
+            </div>
+          </div>
+          <div className={styles.bloco}>
+            <div className={styles.topo}>
+              <div className={styles.estrelas}>
+                <span>★ ★ ★ ★ ☆</span>
+                4.0
+              </div>
+              <img src="" alt="" />
+            </div>
+            <div className={styles.inferior}>
+              <h2>Nome produtos</h2>
+              <p>Localização</p>
+              <h2>R$:00,00</h2>
+            </div>
+          </div>
+          <div className={styles.bloco}>
+            <div className={styles.topo}>
+              <div className={styles.estrelas}>
+                <span>★ ★ ★ ★ ☆</span>
+                4.0
+              </div>
+              <img src="" alt="" />
+            </div>
+            <div className={styles.inferior}>
+              <h2>Nome produtos</h2>
+              <p>Localização</p>
+              <h2>R$:00,00</h2>
+            </div>
+          </div>
+          
         </div>
       </main>
     </div>
