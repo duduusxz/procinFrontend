@@ -1,0 +1,83 @@
+.perfil_lateral {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: clamp(200px, 30vw, 300px);
+  height: 100vh;
+  padding: 1rem;
+  padding-bottom: 0;
+  padding-top: 0;
+  background-color: #ffffff;
+  color: black;
+}
+
+#nome_usuario{
+  width: 100%;
+  word-break: break-word;
+  justify-content: center;
+  display: flex;
+  font-size: clamp(14px, 2vw, 20px);
+}
+
+.logo{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.logo img{
+    width: 140px;
+    align-self: flex-start;
+    display: block;
+}
+
+.imagem_usuario{
+  width: 10vw;
+  min-width: 100px;
+  border-radius: 50%;
+}
+
+#descricao_usuario{
+  text-align: center;
+  width: 90%;
+  font-size: clamp(12px, 2vw, 15px);
+  margin: 0;
+  margin-bottom: 2rem;
+}
+
+.conteudo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button{
+  width: clamp(150px, 30vw, 80%);
+  height: auto;
+  background-color: #4A90E2;
+  margin: 0.3rem;
+  font-size: clamp(12px, 2vw, 16px);
+  transition: all 0.5s;
+  border: none;
+}
+
+button:hover{
+  background-color: #1f65b5;
+  border: none;
+  transform: scale(1.03);
+}
+
+hr{
+  width: 100%;
+  margin: 2rem 0;
+  color: #F0F0F0;
+}
+
+#nota_perfil{
+  width: 100%;
+  word-break: break-word;
+  justify-content: center;
+  display: flex;
+  font-size: clamp(14px, 2vw, 18px);
+}

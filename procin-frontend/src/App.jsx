@@ -1,11 +1,10 @@
-import FormCadastro from './components/Form'
-import './App.css'
+import PerfilLateral from './components/SidebarPerfil'
 
 function App() {
   
 
   return (
-    <FormCadastro />
+    <PerfilLateral/>
   )
 }
 
