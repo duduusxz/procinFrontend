@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Nav from "../components/nav";
 import livros from "../assets/livros.jpg";
 import limpeza from "../assets/limpeza.jpg";
 import feminino from "../assets/Mulheres.jpg";
@@ -22,27 +23,7 @@ export default function Home() {
 
   return (
     <div>
-      <header className={styles.menuNav}>
-        <nav>
-          <div className={styles.logo}>
-            <img src={logoBranca} alt="Logo" />
-          </div>
-          <div className={styles.buscar}>
-            <input type="text" placeholder="Buscar..." />
-          </div>
-          <div className={styles.icons}>
-            <img src={coracao} alt="Ícone 1" />
-            <img src={carrinho} alt="Ícone 2" />
-            <img src={perfil} alt="Ícone 3" />
-          </div>
-          <div>
-            <p>
-              Bem vindo <br />
-              Entre ou cadastre-se
-            </p>
-          </div>
-        </nav>
-      </header>
+      <Nav />
       <nav className={styles.navInferior}>
         <div>
           <p>Tem no soma</p>

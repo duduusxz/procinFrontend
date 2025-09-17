@@ -277,7 +277,7 @@
 }
 .coracaoAtivo {
   animation: pulse 0.5s;
-  filter: drop-shadow(0 0 5px #000000);
+  filter: drop-shadow(0 0 5px #ff0000);
 }
 
 @keyframes pulse {
