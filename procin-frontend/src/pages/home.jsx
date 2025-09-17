@@ -1,15 +1,11 @@
 import { useState } from "react";
-import Nav from "../components/nav";
+import Nav from "../components/Nav.jsx";
 import livros from "../assets/livros.jpg";
 import limpeza from "../assets/limpeza.jpg";
 import feminino from "../assets/Mulheres.jpg";
 import masculino from "../assets/Homens.jpg";
 import acessorios from "../assets/Acessorios.jpg";
 import eletronicos from "../assets/eletronicos.jpg";
-import logoBranca from "../assets/logoBranca.png";
-import coracao from "../assets/coracao.png";
-import carrinho from "../assets/export.png";
-import perfil from "../assets/perfil.png";
 import gostar from "../assets/gostar.png";
 
 import styles from "../style/Home.module.css";
