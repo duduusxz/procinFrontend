@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Nav from "../components/Nav.jsx";
+import Nav from "../components/nav.jsx";
 import livros from "../assets/livros.jpg";
 import limpeza from "../assets/limpeza.jpg";
 import feminino from "../assets/Mulheres.jpg";
@@ -8,7 +8,7 @@ import acessorios from "../assets/Acessorios.jpg";
 import eletronicos from "../assets/eletronicos.jpg";
 import gostar from "../assets/gostar.png";
 
-import styles from "../style/Home.module.css";
+import styles from "../style/home.module.css";
 
 export default function Home() {
   const [favoritos, setFavoritos] = useState([false, false, false, false]);

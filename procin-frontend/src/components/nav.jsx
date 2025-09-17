@@ -3,7 +3,7 @@ import logoBranca from "../assets/logoBranca.png";
 import coracao from "../assets/coracao.png";
 import carrinho from "../assets/export.png";
 import perfil from "../assets/perfil.png";
-import styles from "../style/Home.module.css";
+import styles from "../style/home.module.css";
 
 export default function Nav() {
   return (

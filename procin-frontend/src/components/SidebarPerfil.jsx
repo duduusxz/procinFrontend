@@ -1,4 +1,4 @@
-import styles from '../style/SidebarPerfil.module.css'
+import styles from '../style/sidebarPerfil.module.css'
 import logo from '../assets/logo_preta.png'
 import usuario from '../assets/usuario.webp'
 
