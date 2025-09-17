@@ -79,7 +79,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Fim do Carrosel */}
+        {/* Fim do Carrosel*/}
 
         <div className={styles.produtos}>
           {[0, 1, 2, 3].map((idx) => (
