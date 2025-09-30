@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar Perfil</title>
+
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    /*  logo  */
+
+    .div-logo{
+      display: flex;
+      flex-direction: column;
+    }
+
+
+    .logo{
+      position: fixed;
+      top: 5px;
+      left: 5px;
+    }
+
+    .title{
+      position: fixed;
+      top: 5px;
+      right: 5px;
+      color: #3a8ef6;
+    }
+
+
+    /* edição de perfil */
+
+    .card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      width: 350px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin: 0 auto 10px;
+      object-fit: cover;
+    }
+
+    .input-group {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .options {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: #555;
+      margin: 10px 0;
+    }
+
+    a{
+      text-decoration: none;
+      color: #555;
+      transition: 0.3;
+    }
+
+    a:hover{
+      color: #898989;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: #3a8ef6;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #336ed1;
+    }
+  </style>
+</head>
+<body>
+  <div class="div-logo">
+    <img src="#" alt="Logo SOMA" class="logo">
+
+    <h2 class="title">Editar Perfil</h2>
+  </div>
+  <form action="#" method="post">
+  <div class="card">
+    <img src="Lily nails especialista em decoração 3D.png" alt="Avatar" class="avatar">
+    <input type="file" id="upload" hidden>
+    <label for="upload" style="cursor:pointer; color:#3a8ef6; font-size:13px;">📷</label>
+
+    <div class="input-group">
+      <input type="text" placeholder="Nome" name="nome_usuario">
+      <input type="email" placeholder="Email" name="email_usuario">
+    </div>
+
+    <div class="input-group">
+      <input type="password" placeholder="Senha Atual" name="senha_usuario">
+      <input type="password" placeholder="Confirmar Senha" name="confirmar_senha">
+    </div>
+    
+
+    <div class="input-group">
+      <input type="date" name="nascimento_usuario">
+      <select name="deficiência_usuario">
+        <option disabled selected>Tipo de Deficiência</option>
+        <option value="visual">Visual</option>
+        <option value="auditiva">Auditiva</option>
+        <option value="motora">Motora</option>
+        <option value="cognitiva">Cognitiva</option>
+      </select>
+    </div>
+
+    <div class="options">
+      <a href="#">Alterar dados bancários</a>
+      <a href="#">Alterar endereço</a>
+    </div>
+
+    <button class="btn" type="submit">Confirmar</button>
+
+  </div>
+  </form>
+</body>
+</html>
+
+
+
