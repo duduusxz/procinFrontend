@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pedidos_vendedor.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Pedidos Vendedor</title>
+</head>
+<body>
+    <nav class="nav-top">
+        <div class="logo">
+            <img src="#" alt="Logo Soma">
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Pesquisar...">
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="user-actions">
+            <div class="icons">
+                <a href="#"><i class="far fa-heart"></i></a>
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#"><i class="far fa-user"></i></a>
+            </div>
+            <div class="welcome-message">
+                <span>Bem-vindo, <a href="#">Entre ou Cadastre-se</a></span>
+            </div>
+        </div>
+    </nav>
+    <div class="nav-bar">
+        <a href="#"><i class="fa fa-bars"></i> Tem no Soma </a>
+        <a href="#">Serviços</a>
+        <a href="#">Produtos</a>
+        <a href="#">Meus Pedidos</a>
+    </div>
+
+    <div class="barra-status">
+        <a href="#" class="active" data-category="todos">Todos</a>
+        <a href="#" data-category="nao-pago">Não Pago</a>
+        <a href="#" data-category="a-enviar">A Enviar</a>
+        <a href="#" data-category="enviado">Enviado</a>
+        <a href="#" data-category="concluido">Concluído</a>
+        <a href="#" data-category="cancelado">Cancelado</a>
+        <a href="#" data-category="devolucao">Devolução/Reembolso</a>
+        <a href="#" data-category="falha-entrega">Falha na Entrega</a>
+    </div>
+
+    <main>
+        <div class="product-container" id="product-container">
+            <div class="product-card" data-category="todos">
+                <div class="product-image">
+                    <img src="https://m.media-amazon.com/images/I/61H+dYcPgRL._AC_SX569_.jpg" alt="Produto">
+                </div>
+                <div class="product-info">
+                    <p class="product-title"><strong>Nome do Produto</strong></p>
+                    <p class="product-variation">Variação: Amarela x5</p>
+                    <p class="product-status"><strong>Status:</strong> Enviado</p>
+                </div>
+                <div class="product-actions">
+                    <p class="avaliacao">Não Avaliado</p>
+                    <p class="product-price"><strong>Total da compra:</strong> R$ 00,00</p>
+                    <button class="btn btn-primary">Emitir NF</button>
+                </div>
+            </div>
+            <div class="product-card" data-category="nao-pago">
+                <div class="product-image">
+                    <img src="https://m.media-amazon.com/images/I/61H+dYcPgRL._AC_SX569_.jpg" alt="Produto">
+                </div>
+                <div class="product-info">
+                    <p class="product-title"><strong>Nome do Produto</strong></p>
+                    <p class="product-variation">Variação: Verde x2</p>
+                    <p class="product-status"><strong>Status:</strong> Não Pago</p>
+                </div>
+                <div class="product-actions">
+                    <p class="avaliacao">Pagamento Pendente</p>
+                    <p class="product-price"><strong>Total da compra:</strong> R$ 50,00</p>
+                </div>
+            </div>
+            <div class="product-card" data-category="a-enviar">
+                <div class="product-image">
+                    <img src="https://m.media-amazon.com/images/I/61H+dYcPgRL._AC_SX569_.jpg" alt="Produto">
+                </div>
+                <div class="product-info">
+                    <p class="product-title"><strong>Nome do Produto</strong></p>
+                    <p class="product-variation">Variação: Azul x3</p>
+                    <p class="product-status"><strong>Status:</strong> A Enviar</p>
+                </div>
+                <div class="product-actions">
+                    <p class="avaliacao">Aguardando Envio</p>
+                    <p class="product-price"><strong>Total da compra:</strong> R$ 75,00</p>
+                    <button class="btn btn-primary">Confirmar Envio</button>
+                </div>
+            </div>
+            <div class="product-card" data-category="enviado">
+                <div class="product-image">
+                    <img src="https://m.media-amazon.com/images/I/61H+dYcPgRL._AC_SX569_.jpg" alt="Produto">
+                </div>
+                <div class="product-info">
+                    <p class="product-title"><strong>Nome do Produto</strong></p>
+                    <p class="product-variation">Variação: Amarela x5</p>
+                    <p class="product-status"><strong>Status:</strong> Enviado</p>
+                </div>
+                <div class="product-actions">
+                    <p class="avaliacao">Não Avaliado</p>
+                    <p class="product-price"><strong>Total da compra:</strong> R$ 00,00</p>
+                    <button class="btn btn-primary">Emitir NF</button>
+                </div>
+            </div>
+            <div class="product-card" data-category="concluido">
+                <div class="product-image">
+                    <img src="https://m.media-amazon.com/images/I/61H+dYcPgRL._AC_SX569_.jpg" alt="Produto">
+                </div>
+                <div class="product-info">
+                    <p class="product-title"><strong>Nome do Produto</strong></p>
+                    <p class="product-variation">Variação: Vermelha x1</p>
+                    <p class="product-status"><strong>Status:</strong> Concluído</p>
+                </div>
+                <div class="product-actions">
+                    <p class="avaliacao">Aguardando a avaliação da compra</p>
+                    <p class="product-price"><strong>Total da compra:</strong> R$ 30,00</p>
+                </div>
+            </div>
+            <div class="product-card" data-category="cancelado">
+                <div class="product-image">
+                    <img src="https://m.media-amazon.com/images/I/61H+dYcPgRL._AC_SX569_.jpg" alt="Produto">
+                </div>
+                <div class="product-info">
+                    <p class="product-title"><strong>Nome do Produto</strong></p>
+                    <p class="product-variation">Variação: Preta x4</p>
+                    <p class="product-status"><strong>Status:</strong> Cancelado</p>
+                </div>
+                <div class="product-actions">
+                    <p class="avaliacao">Pedido Cancelado</p>
+                    <p class="product-price"><strong>Total da compra:</strong> R$ 00,00</p>
+                    <button class="btn btn-primary">Enviar Reembolso</button>
+                </div>
+            </div>
+            <div class="product-card" data-category="devolucao">
+                <div class="product-image">
+                    <img src="https://m.media-amazon.com/images/I/61H+dYcPgRL._AC_SX569_.jpg" alt="Produto">
+                </div>
+                <div class="product-info">
+                    <p class="product-title"><strong>Nome do Produto</strong></p>
+                    <p class="product-variation">Variação: Branca x2</p>
+                    <p class="product-status"><strong>Status:</strong> Devolução/Reembolso</p>
+                </div>
+                <div class="product-actions">
+                    <p class="avaliacao">Devolução em Andamento</p>
+                    <p class="product-price"><strong>Total da compra:</strong> R$ 40,00</p>
+                    <button class="btn btn-primary">Acompanhar Devolução</button>
+                </div>
+            </div>
+            <div class="product-card" data-category="falha-entrega">
+                <div class="product-image">
+                    <img src="https://m.media-amazon.com/images/I/61H+dYcPgRL._AC_SX569_.jpg" alt="Produto">
+                </div>
+                <div class="product-info">
+                    <p class="product-title"><strong>Nome do Produto</strong></p>
+                    <p class="product-variation">Variação: Rosa x1</p>
+                    <p class="product-status"><strong>Status:</strong> Falha na Entrega</p>
+                </div>
+                <div class="product-actions">
+                    <p class="avaliacao">Entrega não Concluída</p>
+                    <p class="product-price"><strong>Total da compra:</strong> R$ 25,00</p>
+                    <button class="btn btn-primary">Reenviar Pedido</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        document.querySelectorAll('.barra-status a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll('.barra-status a').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+
+                const category = this.getAttribute('data-category');
+                const productCards = document.querySelectorAll('.product-card');
+
+                productCards.forEach(card => {
+                    if (category === 'todos') {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = card.getAttribute('data-category') === category ? 'flex' : 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
