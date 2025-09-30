@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="adcionar_produto.css">
+    <script src="adicionar_prouto.js"></script>
+    <title>Adicionar produto</title>
+</head>
+<body>
+
+    <!-- MENU SUPERIOR -->
+
+    <nav class="nav-top">
+        <div class="logo">
+            <img src="#" alt="Logo Soma">
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Pesquisar...">
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="user-actions">
+            <div class="icons">
+                <a href="#"><i class="far fa-heart"></i></a>
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#"><i class="far fa-user"></i></a>
+            </div>
+            <div class="welcome-message">
+                <span>Bem-vindo, <a href="#">Entre ou Cadastre-se</a></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="nav-bar">
+        <a href="#"><i class="fa fa-bars"></i> Tem no Soma </a>
+        <a href="#">Serviços</a>
+        <a href="#">Produtos</a>
+        <a href="#">Meus Pedidos</a>
+    </div>   
+
+    <!-- PARTE FORMULÁRIO -->
+
+    <main>     <!-- FUNDO -->
+
+        <h2 class="title">Adicionar Produtos</h2>      <!-- TÍTULO -->
+
+        <form method="post" class="formulario_informacoes">     <!-- FORMULÁRIO -->
+
+            <div class="container">      <!-- PARTE AZUL -->
+
+                <div class="column_label">     <!-- LEGENDAS -->
+
+                    <label class="legenda_produto">*Nome do produto:</label>
+
+                    <label class="descricao">*Descrição</label>
+
+                    <label class="legenda_produto">*Categoria:</label>
+
+                    <label class="legenda_produto">*Variações:</label>
+
+                    <label class="legenda_produto">*Preço (R$):</label>
+
+                    <label class="legenda_produto">*Estoque:</label>
+
+                    <label class="legenda_produto">*Peso (Kg):</label>
+
+                    <label class="legenda_produto">*Tamanho do pacote (cm):</label>
+
+                </div>
+
+                <div class="column_input">      <!-- INPUTS -->
+
+                    <input type="text" name="nome_produto" id="nome_produto" class="input_produto" required> 
+
+                    <textarea type="text" name="descricao_produto" id="descricao" class="input_produto_descricao" required></textarea>      <!-- DESCRIÇÃO DO PRODUTO -->
+
+                    <Select class="input_produto" name="categoria_produto" id="categoria_produto" required>      <!-- SELEÇÃO DE CATEGORIA -->
+
+                        <option value="1">Categoria-1</option>
+
+                        <option value="2">Categoria-2</option>
+
+                        <option value="3">Categoria-3</option>
+
+                        <option value="4">Categoria-4</option>
+
+                        <option value="5">Categoria-5</option>
+
+                        <option value="6">Categoria-6</option>
+
+                        <option value="7">Categoria-7</option>
+
+                        <option value="8">Categoria-8</option>
+
+                    </Select>
+
+                    <input type="text" name="variacao_produto" id="variacao_produto"  class="input_produto" required>
+
+                    <input type="text" name="preco_produto" id="preco_produto"  class="input_produto" required>
+
+                    <input type="text" name="estoque_produto" id="estoque_produto"  class="input_produto" required>
+
+                    <input type="text"name="peso_produto" id="peso_produto"  class="input_produto" required>
+
+                    <input type="text"name="tamanho_produto" id="tamanho_produto"  class="input_produto" required>
+
+                </div>
+
+
+            </div>
+
+            <button type="submit" class="adicionar_confirmar" onclick="click_confirmar_informacoes()">Confirmar</button>      <!-- BOTÃO DE ENVIAR FORMULÁRIO -->
+
+        </form>
+
+    </main>
+
+    <div class="fundo_container_foto">
+
+        <div class="adicionar_foto_container">
+
+            <form method="post" class="formulario_foto">
+
+                <label for="imagem_produto" class="legenda_foto">Adicionar foto do Produto</label>
+            
+                <label for="imagem_produto" class="label_foto"></label>
+            
+                <input type="file" name="imagem_produto" id="imagem_produto" class="input_foto" required>
+            
+                <button type="submit" class="confirmar_foto" onclick="click_confirmar_foto()">Confirmar</button>
+
+            </form>
+            
+        </div>
+
+    </div>
+
+</body>
+</html>

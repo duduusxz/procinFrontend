@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cadastro</title>
+<link rel="stylesheet" href="Cadastro.css">
+</head>
+<body>
+
+<header>
+    <img src="Images/SOMA.png" alt="Logo" class="logo">
+</header>
+
+<div class="container">
+    <div class="title">Cadastro</div>
+
+    <form>
+        <!-- Nome -->
+        <div class="input-container">
+            <label for="nome_usuario">Nome *</label>
+            <input type="text" id="nome_usuario" placeholder="Digite seu nome">
+        </div>
+
+        <!-- Telefone com bandeira -->
+        <div class="input-container">
+            <label for="telefone_usuario">Telefone *</label>
+            <div class="phone-container">
+                <button type="button" class="country-btn" id="selectedCountry">
+                    <img src="Images/Brasil.png" class="country-flag" alt="BR">
+                    +55
+                </button>
+
+                <input type="tel" id="telefone_usuario" placeholder="(XX) XXXXX-XXXX">
+                
+                <div class="country-dropdown" id="countryDropdown">
+                    <input type="text" id="searchCountry" placeholder="Pesquisar país...">
+                    <ul id="countryList"></ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Senha -->
+        <div class="input-container">
+            <label for="senha_usuario">Senha *</label>
+            <input type="password" id="senha_usuario" placeholder="Digite sua senha">
+        </div>
+
+        <!-- CEP -->
+        <div class="input-container">
+            <label for="cep_usuario">CEP *</label>
+            <input type="text" id="cep_usuario" placeholder="Digite seu CEP">
+        </div>
+
+        <!-- Confirmar senha -->
+        <div class="input-container">
+            <label for="confirmar_usuario">Confirmar Senha *</label>
+            <input type="password" id="confirmar_usuario" placeholder="Confirme sua senha">
+        </div>
+
+        <!-- Complemento -->
+        <div class="input-container">
+            <label for="complemento_usuario">Complemento</label>
+            <input type="text" id="complemento_usuario" placeholder="Digite o complemento">
+        </div>
+
+        <!-- Email -->
+        <div class="input-container">
+            <label for="email_usuario">Email *</label>
+            <input type="email" id="email_usuario" placeholder="Digite seu email">
+        </div>
+
+        <!-- Número -->
+        <div class="input-container">
+            <label for="numero_usuario">Número *</label>
+            <input type="text" id="numero_usuario" placeholder="Digite o número">
+        </div>
+
+        <!-- Data de nascimento -->
+        <div class="input-container">
+            <label for="nascimento_usuario">Data de nascimento *</label>
+            <input id="nascimento_usuario" type="date" placeholder="dd/mm/aaaa">
+        </div>
+
+        <!-- Tipo de Usuário -->
+        <div class="userType-container">
+            <label for="tipo_usuario">Selecione o tipo de Usuário *</label>
+            <button type="button" class="userType-btn" id="userTypeBtn">
+                <span id="selectedUserType">Selecione...</span>
+            </button>
+            <div class="userType-dropdown" id="userTypeDropdown">
+                <ul id="userTypeList">
+                    <li data-value="usuario">Usuário Comum</li>
+                    <li data-value="vendedor">Vendedor</li>
+                    <li data-value="prestador">Prestador de serviços</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Google -->
+        <div class="input-container google">
+            <img src="Images/Google.png" alt="Google">
+        </div>
+
+        <!-- Botão -->
+        <button type="submit" class="Cadastrar" id="cadastrarBtn">Cadastrar</button>
+    </form>
+
+    <!-- Modal -->
+    <div class="modal" id="deficienciaModal">
+        <div class="modal-content">
+          <p>Você possui alguma deficiência?</p>
+          <button id="simBtn">Sim</button>
+          <button id="naoBtn">Não</button>
+        </div>
+    </div>
+      
+</div>
+
+<script>
+    // --- CAMPOS OBRIGATÓRIOS ---
+    const requiredFields = [
+      "nome_usuario",
+      "telefone_usuario",
+      "senha_usuario",
+      "cep_usuario",
+      "confirmar_usuario",
+      "email_usuario",
+      "numero_usuario",
+      "nascimento_usuario"
+    ];
+    
+    const cadastrarBtn = document.getElementById("cadastrarBtn");
+    const modal = document.getElementById("deficienciaModal");
+    const simBtn = document.getElementById("simBtn");
+    const naoBtn = document.getElementById("naoBtn");
+    
+    const userTypeBtn = document.getElementById("userTypeBtn");
+    const userTypeDropdown = document.getElementById("userTypeDropdown");
+    const userTypeList = document.getElementById("userTypeList");
+    const selectedUserType = document.getElementById("selectedUserType");
+    
+    // --- MOSTRAR/ESCONDER DROPDOWN ---
+    userTypeBtn.addEventListener("click", () => {
+      userTypeDropdown.classList.toggle("active");
+    });
+    
+    // --- SELEÇÃO DO TIPO DE USUÁRIO ---
+    userTypeList.addEventListener("click", (e) => {
+      if (e.target.tagName === "LI") {
+        const tipo = e.target.dataset.value; // pega data-value do <li>
+        selectedUserType.textContent = e.target.textContent;
+        userTypeBtn.dataset.value = tipo; // salva o valor no botão
+        userTypeDropdown.classList.remove("active");
+      }
+    });
+    
+    // Fecha dropdown ao clicar fora
+    document.addEventListener("click", (e) => {
+      if (!userTypeBtn.contains(e.target) && !userTypeDropdown.contains(e.target)) {
+        userTypeDropdown.classList.remove("active");
+      }
+    });
+    
+    // --- VALIDAÇÃO DE CAMPOS ---
+    function validarCampos() {
+      for (let id of requiredFields) {
+        const campo = document.getElementById(id);
+        if (!campo.value.trim()) {
+          alert("Por favor, preencha todos os campos obrigatórios.");
+          campo.focus();
+          return false;
+        }
+      }
+    
+      // Senha igual
+      const senha = document.getElementById("senha_usuario").value.trim();
+      const confirmar = document.getElementById("confirmar_usuario").value.trim();
+      if (senha !== confirmar) {
+        alert("As senhas não coincidem.");
+        return false;
+      }
+    
+      // Tipo de usuário
+      if (!userTypeBtn.dataset.value) {
+        alert("Selecione o tipo de usuário.");
+        return false;
+      }
+    
+      return true;
+    }
+    
+    // --- AÇÃO DO BOTÃO CADASTRAR ---
+    cadastrarBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+    
+      if (!validarCampos()) return;
+    
+      if (userTypeBtn.dataset.value === "usuario") {
+        alert("Cadastro concluído com sucesso!");
+        window.location.href = "index.html"; // redireciona
+      } else {
+        modal.style.display = "flex"; // abre modal para vendedor/prestador
+      }
+    });
+    
+    // --- BOTÕES DO MODAL ---
+    simBtn.addEventListener("click", () => {
+      window.location.href = "Deficiencia.html";
+    });
+    
+    naoBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+      alert("Cadastro concluído com sucesso!");
+      window.location.href = "index.html";
+    });
+    </script>
+    
+    
+</body>
+</html>

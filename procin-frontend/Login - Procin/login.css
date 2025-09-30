@@ -1,0 +1,132 @@
+html{
+    height: 100%;
+    width: 100%;
+    font-family: "Josefin Sans";
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F5F5F5;
+    height: 100%;
+}
+
+.logo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15%;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-color: #4A90E2;
+    border-radius: 20px;
+    width: 50%;
+    height: 70%;
+    max-width: 550px;
+    min-width: 250px;
+}
+
+.title{
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    row-gap: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    width: 80%;
+    height: 70%;
+    max-width: 420px;
+    min-width: 150px;
+}
+
+label{
+    color: #2E4152;
+    font-weight: bold;
+    margin-top: 5px;
+    align-self: flex-start;
+}
+
+input {
+    background-color: #ECECEC;
+    border-radius: 10px;
+    border: none;
+    width: 100%;
+    height: 50px;
+    min-height: 40px;
+    max-height: 50px; 
+    font-family: "Josefin Sans";
+    padding: 0 10px; 
+    box-sizing: border-box; 
+    font-size: 1.5rem;
+}
+
+.input-container {
+    position: relative;
+    width: 100%;
+}
+
+.input-container input {
+    padding-right: 55px; 
+}
+
+.input-container img {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 40px; 
+}
+
+
+a{
+    text-decoration: none;
+    color: #2E4152;
+    font-family: "inter";
+    align-self: flex-start;
+    font-size: 0.9rem;
+}
+
+.entrar_login, .login_google{
+    height: 15%;
+    margin-top: 5px;
+    margin-bottom: 1%;
+    border-radius: 10px;
+}
+
+.entrar_login{
+    width: 70%;
+    background-color: #4A90E2;
+    color: #FFFFFF;
+    border: none;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
+    font-size: 1.5rem;
+    font-weight: bold
+}
+
+.entrar_login:hover{
+    cursor: pointer;
+    background-color: #4A80E2;
+}
+
+.login_google{
+    width: 80%;
+    background-color: #FFFFFF;
+    border: 1px solid #000000;
+}

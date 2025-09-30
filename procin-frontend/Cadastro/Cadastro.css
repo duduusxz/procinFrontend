@@ -1,0 +1,397 @@
+/* RESET */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    font-family: "Josefin Sans", sans-serif;
+    background-color: #f2f2f2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+}
+
+/* HEADER */
+header {
+    width: 100%;
+    position: relative;
+}
+
+/* LOGO */
+.logo {
+    position: fixed;
+    top: 3px;
+    left: 3px;
+    max-width: 120px;
+}
+
+/* CONTAINER AZUL */
+.container {
+    background-color: #4A90E2;
+    border-radius: 15px;
+    padding: 30px;
+    width: 720px;
+    max-width: 95%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px; /* espaço entre logo e container */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* TÍTULO */
+.title {
+    color: #fff;
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+/* FORM BRANCO */
+form {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    justify-content: space-between;
+}
+
+/* LABELS */
+label {
+    font-weight: bold;
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+    color: #2E4152;
+}
+
+select {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* CAMPOS GERAIS */
+.input-container {
+    position: relative;
+    flex: 0 0 calc(50% - 12px); /* dois campos por linha */
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    width: 100%;
+    height: 48px;
+    padding: 0 12px;
+    border: none;
+    border-radius: 12px;
+    background-color: #ECECEC;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+/* ESTADO DE FOCO */
+input:focus, select:focus, button:focus {
+    outline: 2px solid #4A90E2;
+    outline-offset: 2px;
+}
+
+/* CAMPO GOOGLE */
+.input-container.google {
+    flex: 0 0 100%;        /* ocupa linha inteira */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    height: 50px;
+    cursor: pointer;
+    background-color: #fff;
+    box-sizing: border-box;
+    transition: background 0.2s ease;
+}
+
+.input-container.google:hover {
+    background-color: #f7f7f7;
+}
+
+.input-container.google img {
+    width: 28px;
+    height: 28px;
+}
+
+/* BOTÃO CADASTRAR */
+.Cadastrar {
+    flex: 0 0 100%;        /* ocupa linha inteira */
+    height: 50px;
+    background: linear-gradient(to bottom, #4A90E2, #357ABD);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 5px;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.2);
+    transition: background 0.2s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.Cadastrar:hover {
+    background: #357ABD;
+}
+
+.Cadastrar:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 2px rgba(0,0,0,0.3);
+}
+
+/* ========================= */
+/* CAMPO TELEFONE + BANDEIRA */
+/* ========================= */
+.phone-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+}
+
+.country-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #ECECEC;
+    border: none;
+    border-radius: 8px;
+    padding: 0 12px;
+    height: 48px;
+    cursor: pointer;
+    font-size: 1rem;
+    min-width: 90px;
+}
+
+.country-flag {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 2px rgba(0,0,0,0.3);
+}
+
+.phone-container input {
+    flex: 1;
+    height: 48px;
+    border-radius: 12px;
+    border: none;
+    background-color: #ECECEC;
+    padding: 0 12px;
+    font-size: 1rem;
+}
+
+/* DROPDOWN DE PAÍSES */
+.country-dropdown {
+    display: none;
+    position: absolute;
+    top: 55px;
+    left: 0;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    max-height: 250px;
+    overflow-y: auto;
+    width: 220px;
+    z-index: 100;
+    opacity: 0;
+    transform: scale(0.98);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.country-dropdown.active {
+    display: block;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.country-dropdown::-webkit-scrollbar {
+    width: 6px;
+}
+.country-dropdown::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+#searchCountry {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+#countryList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#countryList li {
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+#countryList li:hover {
+    background-color: #f2f2f2;
+}
+
+#countryList img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 2px rgba(0,0,0,0.3);
+}
+
+/* ========================= */
+/* CONTAINER TIPO DE USUÁRIO */
+/* ========================= */
+.userType-container {
+  position: relative;
+  flex: 0 0 calc(50% - 12px); /* dois por linha */
+  display: flex;
+  flex-direction: column; 
+}
+
+.userType-btn {
+  width: 100%;
+  height: 48px;
+  padding: 0 12px;
+  border: none;
+  border-radius: 12px;
+  background-color: #ECECEC;
+  font-size: 1rem;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.userType-dropdown {
+  display: none;
+  position: absolute;
+  top: 55px;
+  left: 0;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  width: 100%;
+  z-index: 100;
+  opacity: 0;
+  transform: scale(0.98);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.userType-dropdown.active {
+  display: block;
+  opacity: 1;
+  transform: scale(1);
+}
+
+#userTypeList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#userTypeList li {
+  padding: 10px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: #2E4152;
+}
+
+#userTypeList li:hover {
+  background-color: #f2f2f2;
+}
+
+/* ========================= */
+/* MODAL */
+/* ========================= */
+.modal {
+  display: none; /* escondido ao carregar a página */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5); /* fundo escuro */
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.modal-content p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #2E4152;
+    font-weight: bold;
+}
+
+.modal-content button {
+    background: #4A90E2;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 0 10px;
+    transition: background 0.2s ease-in-out;
+}
+
+.modal-content button:hover {
+    background: #357ABD;
+}
+
+/* ========================= */
+/* RESPONSIVIDADE */
+/* ========================= */
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        margin-top: 40px;
+    }
+
+    .input-container {
+        flex: 0 0 100%;
+    }
+
+    .country-dropdown {
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    input, .country-btn, .userType-btn {
+        height: 40px;
+        font-size: 0.9rem;
+    }
+}

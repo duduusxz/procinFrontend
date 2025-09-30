@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="login.css">
+    <script src="login.js"></script>
+    <title>Login</title>
+</head>
+<body>
+
+    <img class="logo" src="imgs/logo" alt="SOMA">     <!-- LOGO -->
+
+    <div class="container">      <!-- PARTE AZUL-->
+
+        <h2 class="title">Login</h2>     <!-- TÍTULO -->
+
+        <form method="post">     <!-- PARTE BRANCA -->
+
+            <label>Usuário</label>    <!-- LEGENDA INPUT LOGIN -->
+            <input type="text" name="email_usuario" id="email_usuario" required>      <!-- INPUT EMAIL -->
+
+            <label for="senha_usuario">Senha</label>      <!-- LEGENDA INPUT SENHA -->
+            <div class="input-container">      <!-- DIV INPUT -->
+                <input type="password" name="senha_usuario" id="senha_usuario" minlength="8" required>      <!-- INPUT SENHA -->
+                <img src="imgs/Ícone_Senha.png" class="icon-eye" onclick="toggle_password()"> <!-- ÍCONE DE OLHO -->
+            </div>
+
+            <a href="">Esqueci a senha</a>     <!-- BOTÃO ESQUECI A SENHA -->
+
+            <button class="login_google"></button>    <!-- BOTÃO GOOGLE -->
+            <button class="entrar_login" type="submit" onclick="click_entrar()">Entrar</button>     <!-- BOTÃO ENTRAR --> 
+        </form>
+    </div>
+</body>
+</html>

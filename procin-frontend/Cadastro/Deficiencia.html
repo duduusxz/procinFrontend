@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tela Deficiência</title>
+<link rel="stylesheet" href="deficiencia.css">
+</head>
+<body>
+
+ <!-- Logo -->
+  <header>
+    <img src="Images/SOMA.png" alt="Logo" class="logo">
+  </header>
+
+<div class="container">
+
+ 
+
+  <h2>Selecione seu tipo de deficiencia</h2>
+
+  <div class="icons-and-selects">
+  <div class="icon-column">
+    <div class="icon-circle">
+      <img src="Images/Deficiencia_Visual.png" alt="Visual">
+    </div>
+    <span class="select-label">Visual</span>
+    <div class="select-square" onclick="selectItem(this)"></div>
+  </div>
+
+  <div class="icon-column">
+    <div class="icon-circle">
+      <img src="Images/Deficiencia_Auditiva.png" alt="Auditiva">
+    </div>
+    <span class="select-label">Auditiva</span>
+    <div class="select-square" onclick="selectItem(this)"></div>
+  </div>
+
+  <div class="icon-column">
+    <div class="icon-circle">
+      <img src="Images/Deficiencia_Motora.png" alt="Motora">
+    </div>
+    <span class="select-label">Motora</span>
+    <div class="select-square" onclick="selectItem(this)"></div>
+  </div>
+
+  <div class="icon-column">
+    <div class="icon-circle">
+      <img src="Images/Deficiencia_Cognitiva.png" alt="Cognitiva">
+    </div>
+    <span class="select-label">Cognitiva</span>
+    <div class="select-square" onclick="selectItem(this)"></div>
+  </div>
+</div>
+
+ <!-- Laudo Médico -->
+<div class="medical-report">
+  <h2>Laudo Médico</h2>
+  
+  <!-- Área de visualização -->
+  <div class="report-preview" id="reportPreview">
+    <span class="no-file">Nenhum arquivo anexado</span>
+  </div>
+  
+  <!-- Upload de arquivo -->
+  <label class="upload-label">
+    <input type="file" accept="image/*,.pdf" id="reportInput">
+    <span>Anexar Laudo</span>
+  </label>
+</div>
+
+
+
+
+  <!-- Botão Enviar -->
+  <button class="btn-enviar">Enviar</button>
+
+</div>
+
+<script>
+function selectItem(el) {
+  // Remove a seleção de todos os quadrados
+  const allSquares = document.querySelectorAll('.select-square');
+  allSquares.forEach(sq => sq.classList.remove('selected'));
+
+  // Adiciona a classe 'selected' ao quadrado clicado
+  el.classList.add('selected');
+}
+
+
+//Laudo Médico
+const reportInput = document.getElementById('reportInput');
+const reportPreview = document.getElementById('reportPreview');
+
+reportInput.addEventListener('change', function() {
+    const file = this.files[0];
+    if (!file) return;
+
+    reportPreview.innerHTML = ''; // limpa preview
+
+    // Botão remover
+    const removeBtn = document.createElement('button');
+    removeBtn.textContent = 'Remover';
+    removeBtn.classList.add('remove-btn');
+    removeBtn.onclick = () => {
+        reportPreview.innerHTML = '<span class="no-file">Nenhum arquivo anexado</span>';
+        reportInput.value = ''; // limpa input
+    };
+    reportPreview.appendChild(removeBtn);
+
+    if (file.type.startsWith('image/')) {
+        const img = document.createElement('img');
+        img.src = URL.createObjectURL(file);
+        reportPreview.appendChild(img);
+    } else if (file.type === 'application/pdf') {
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(file);
+        link.target = '_blank';
+        link.textContent = file.name;
+        reportPreview.appendChild(link);
+    } else {
+        reportPreview.innerHTML = 'Formato não suportado';
+    }
+});
+</script>
+
+</body>
+</html>
