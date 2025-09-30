@@ -1,0 +1,120 @@
+.carrinhoContainer {
+  max-width: 950px;
+  margin: 20px auto;
+  background: #fff;
+  padding: 20px 25px;
+  border-radius: 8px;
+}
+
+.carrinhoContainer h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.carrinhoTabela {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.carrinhoTabela th {
+  text-align: left;
+  padding: 12px 8px;
+  font-weight: bold;
+  border-bottom: 2px solid #ddd;
+}
+
+.carrinhoTabela td {
+  padding: 15px 8px;
+  vertical-align: top;
+  border-bottom: 1px solid #eee;
+}
+
+.produto {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.imagemFrete {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imagemFrete img {
+  width: 80px;
+  height: 80px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.frete {
+  margin-top: 5px;
+  font-size: 12px;
+  color: green;
+  text-align: center;
+}
+
+.descricao {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.vendedor {
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.carrinhoFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.acoes span {
+  margin-right: 15px;
+}
+
+.acoes a {
+  margin-left: 15px;
+  color: black;
+  text-decoration: none;
+  padding: 40px;
+}
+
+.acoes i.fa-heart {
+  color: #4a90e2;
+}
+
+.total {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.total strong {
+  color: #4a90e2;
+  font-size: 15px;
+}
+
+.btnContinuar {
+  background: #4a90e2;
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btnContinuar:hover {
+  background: #357ab8;
+}

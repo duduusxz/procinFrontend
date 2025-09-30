@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Nav from "../components/nav.jsx";
+import NavInferior from "../components/navInferior.jsx";
 import livros from "../assets/livros.jpg";
 import limpeza from "../assets/limpeza.jpg";
 import feminino from "../assets/Mulheres.jpg";
@@ -20,14 +21,7 @@ export default function Home() {
   return (
     <div>
       <Nav />
-      <nav className={styles.navInferior}>
-        <div>
-          <p>Tem no soma</p>
-          <p>Serviços</p>
-          <p>Produtos</p>
-          <p>Meus pedidos</p>
-        </div>
-      </nav>
+      <NavInferior />
       {/* Fim do NavBar */}
 
       <main>
