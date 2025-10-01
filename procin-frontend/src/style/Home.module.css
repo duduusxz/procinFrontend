@@ -1,14 +1,19 @@
 .menuNav {
-  background-color: #4a90e2;
-  padding: 20px;
-  color: white;
+    background-color: #4a90e2;
+    padding: 20px;
+    color: white;
+    position: fixed; /* Faz o nav ficar fixo */
+    top: 0; /* Sempre no topo */
+    left: 0;
+    width: 100%; /* Ocupa toda a largura */
+    z-index: 999; /* Fica acima de outros elementos */
 }
 
 .menuNav nav {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  justify-content: space-between;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-between;
 }
 
 .logo {
@@ -90,13 +95,19 @@
   transform: scale(1.1);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
+
 .navInferior {
-  background-color: #c9dcfd;
-  padding: 15px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #c9dcfd;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Também fixo, se quiser que acompanhe o scroll */
+    top: 80px; /* Ajuste conforme a altura do menuNav */
+    left: 0;
+    width: 100%;
+    z-index: 998;
 }
 
 .navInferior div {

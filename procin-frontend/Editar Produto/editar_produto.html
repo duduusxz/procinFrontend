@@ -7,8 +7,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="adcionar_produto.css">
-    <script src="adicionar_prouto.js"></script>
+    <link rel="stylesheet" href="/procin-frontend/Editar Produto/editar_produto.css">
+    <script src="/procin-frontend/Editar Produto/editar_produto.js"></script>
     <title>Adicionar produto</title>
 </head>
 <body>
@@ -76,7 +76,7 @@
 
                     <input type="text" name="nome_produto" id="nome_produto" class="input_produto" required> 
 
-                    <textarea type="text" name="descricao_produto" id="descricao" class="input_produto_descricao" required></textarea>      <!-- DESCRIÇÃO DO PRODUTO -->
+                    <textarea type="text" name="descricao_produto" id="descricao_produto" class="input_produto_descricao" required></textarea>      <!-- DESCRIÇÃO DO PRODUTO -->
 
                     <Select class="input_produto" name="categoria_produto" id="categoria_produto" required>      <!-- SELEÇÃO DE CATEGORIA -->
 
@@ -113,7 +113,7 @@
 
             </div>
 
-            <button type="submit" class="adicionar_confirmar" onclick="click_confirmar_informacoes()">Confirmar</button>      <!-- BOTÃO DE ENVIAR FORMULÁRIO -->
+            <button type="submit" class="adicionar_confirmar" onclick="click_confirmar_informacoes(event)">Confirmar</button>      <!-- BOTÃO DE ENVIAR FORMULÁRIO -->
 
         </form>
 
