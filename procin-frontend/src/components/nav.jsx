@@ -4,8 +4,17 @@ import coracao from "../assets/coracao.png";
 import carrinho from "../assets/export.png";
 import perfil from "../assets/perfil.png";
 import styles from "../style/home.module.css";
+import { useNavigate } from "react-router-dom";
 
 export default function Nav() {
+
+  const navigate = useNavigate()
+
+  function IrParaLogin(){
+    navigate("/login")
+  }
+
+
   return (
     <header className={styles.menuNav}>
             <nav>
@@ -21,9 +30,9 @@ export default function Nav() {
                 <img src={perfil} alt="Ícone 3" />
               </div>
               <div>
-                <p>
+                <p className={styles.entreCadastro}>
                   Bem vindo <br />
-                  Entre ou cadastre-se
+                  <p onClick={IrParaLogin} className={`${styles.entreCadastro} ${styles.loginCadastro}`}>Entre ou cadastre-se</p>
                 </p>
               </div>
             </nav>

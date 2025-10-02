@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import styles from "../style/login.module.css";
+import iconSenha from "../assets/iconSenha.png"
+import logo from '../assets/logo_preta.png'
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
@@ -22,6 +24,8 @@ export default function Login() {
 
   return (
     <>
+      <img src={logo} alt="Logo SOMA" className={styles.logo} />
+
       <div className={styles.container}>
         <h2 className={styles.title}>Login</h2>
 
@@ -56,6 +60,7 @@ export default function Login() {
             />
             <img
               className={styles.iconEye}
+              src={iconSenha}
               onClick={togglePassword}
               alt={showPassword ? "Esconder senha" : "Mostrar senha"}
             />

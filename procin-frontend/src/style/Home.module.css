@@ -302,3 +302,12 @@
     transform: scale(1);
   }
 }
+
+
+.entreCadastro{
+  color: white;
+}
+
+.loginCadastro{
+  cursor: pointer;
+}
