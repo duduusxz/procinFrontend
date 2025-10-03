@@ -79,6 +79,7 @@
   padding: 0 10px;
   box-sizing: border-box;
   font-size: 1rem;
+  cursor: text;
 }
 
 .inputContainer {
@@ -96,7 +97,6 @@
 }
 
 .link {
-  text-decoration: none;
   color: #2e4152;
   font-family: "Inter", sans-serif;
   align-self: flex-start;

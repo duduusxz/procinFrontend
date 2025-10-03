@@ -135,15 +135,15 @@
 
 .maisProcurados {
   padding: 60px 20px;
-  background-color: #ffffff;
+  background-color: #f5f5f5;
   text-align: center;
-  margin-top: 100px;
+  margin-top: 10rem;
 }
 
 .maisProcurados h2 {
   color: #2c3e50;
-  font-size: 28px;
-  margin-bottom: 30px;
+  font-size: 1.8rem;
+  margin-bottom: 1.8rem;
   font-weight: 600;
 }
 
@@ -156,18 +156,19 @@
 
 .carrosel {
   display: flex;
-  gap: 120px;
+  gap: 3rem;
   overflow-x: auto;
   padding: 20px 0;
   justify-content: flex-start;
   align-items: center;
   scroll-behavior: smooth;
-  max-width: 900px;
+  max-width: 70%;
+  border-radius: 2rem;
 }
 
 .carroselBtn {
   background-color: #4a90e2;
-  color: white;
+  color: #f5f5f5;
   border: none;
   width: 40px;
   height: 40px;
@@ -239,8 +240,8 @@
   text-align: center;
 }
 .produtos {
-  padding: 60px 20px;
-  background-color: #ffffff;
+  padding: 20px;
+  background-color: #f5f5f5;
   text-align: start;
   display: flex;
   flex-direction: row;
@@ -284,7 +285,6 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-top: 10px;
 }
 .coracaoAtivo {
   animation: pulse 0.5s;
@@ -310,4 +310,11 @@
 
 .loginCadastro{
   cursor: pointer;
+}
+
+.produto{
+  color: #2c3e50;
+  font-size: 1.8rem;
+  font-weight: 600;
+  padding: 0 3rem;
 }
