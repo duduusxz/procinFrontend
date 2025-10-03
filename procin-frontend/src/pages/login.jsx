@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "../style/login.module.css";
 import iconSenha from "../assets/iconSenha.png"
 import logo from '../assets/logo_preta.png'
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
@@ -22,9 +23,15 @@ export default function Login() {
     // Aqui você pode implementar a lógica para enviar os dados ao back-end
   }
 
+    const navigate = useNavigate()
+
+    function IrParaHome(){
+      navigate("/")
+    }
+
   return (
     <>
-      <img src={logo} alt="Logo SOMA" className={styles.logo} />
+      <img src={logo} alt="Logo SOMA" className={styles.logo} onClick={IrParaHome}/>
 
       <div className={styles.container}>
         <h2 className={styles.title}>Login</h2>
