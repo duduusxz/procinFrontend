@@ -29,10 +29,15 @@ export default function Login() {
       navigate("/")
     }
 
+    function IrParaCadastro(){
+      navigate("/cadastro")
+    }
+
   return (
     <>
       <img src={logo} alt="Logo SOMA" className={styles.logo} onClick={IrParaHome}/>
 
+    <div className={styles.wrapper}>
       <div className={styles.container}>
         <h2 className={styles.title}>Login</h2>
 
@@ -46,6 +51,7 @@ export default function Login() {
             name="email_usuario"
             id="email_usuario"
             required
+            placeholder="Digite seu email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -61,6 +67,7 @@ export default function Login() {
               name="senha_usuario"
               id="senha_usuario"
               minLength={8}
+              placeholder="Digite sua senha"
               required
               value={senha}
               onChange={(e) => setSenha(e.target.value)}
@@ -82,7 +89,9 @@ export default function Login() {
           <button type="submit" className={styles.entrarLogin}>
             Entrar
           </button>
+          <p><a onClick={IrParaCadastro}>Cadastre-se</a></p>
         </form>
+      </div>
       </div>
     </>
   );

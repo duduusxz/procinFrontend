@@ -1,0 +1,458 @@
+.logo {
+  width: 10rem;
+  border-radius: 4px;
+  margin-left: 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: fixed;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.logo img {
+  height: 80px;
+  transition: all 0.3s ease;
+}
+
+.logo:hover img {
+  filter: brightness(1.1);
+}
+
+/* Wrapper que centraliza o container apenas nessa tela */
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* ocupa a tela toda */
+  background-color: #f5f5f5; /* opcional */
+}
+
+/* Mantém o visual original do container */
+.container {
+  background-color: #4A90E2;
+  border-radius: 1rem;
+  padding: 30px;
+  width: 720px;
+  max-width: 95%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transform: scale(0.9);
+  margin: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* TÍTULO */
+.title {
+    color: #fff;
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+/* FORM BRANCO */
+form {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    justify-content: space-between;
+    display: flex;
+    justify-content: center;
+}
+
+/* LABELS */
+label {
+  align-self: flex-start;     /* alinha à esquerda do container */
+  font-weight: bold;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+  color: #2E4152;
+  text-align: left;           /* garante alinhamento do texto */
+}
+
+select {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* CAMPOS GERAIS */
+.inputContainer {
+    position: relative;
+    flex: 0 0 calc(50% - 12px); /* dois campos por linha */
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+input {
+    width: 100%;
+    height: 48px;
+    padding: 0 12px;
+    border: none;
+    border-radius: 12px;
+    background-color: #ECECEC;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+/* ESTADO DE FOCO */
+input:focus, select:focus, button:focus {
+    outline: 2px solid #4A90E2;
+    outline-offset: 2px;
+}
+
+/* CAMPO GOOGLE */
+.inputContainer.google {
+    flex: 0 0 100%;        /* ocupa linha inteira */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    height: 50px;
+    cursor: pointer;
+    background-color: #fff;
+    box-sizing: border-box;
+    transition: background 0.2s ease;
+}
+
+.inputContainer.google:hover {
+    background-color: #f7f7f7;
+}
+
+.inputContainer.google img {
+    width: 28px;
+    height: 28px;
+}
+
+/* BOTÃO CADASTRAR */
+.cadastrar {
+    flex: 0 0 100%;        /* ocupa linha inteira */
+    height: 50px;
+    background: #4A90E2;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 5px;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+.cadastrar:hover {
+    background: #4a80e2;;
+}
+
+.cadastrar:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 2px rgba(0,0,0,0.3);
+}
+
+/* ========================= */
+/* CAMPO TELEFONE + BANDEIRA */
+/* ========================= */
+.phoneContainer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+}
+
+.countryBtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #ECECEC;
+    border: none;
+    border-radius: 8px;
+    padding: 0 12px;
+    height: 48px;
+    cursor: pointer;
+    font-size: 1rem;
+    min-width: 90px;
+    color: #606060;
+}
+
+.countryBtn:hover{
+    transform: scale(1);
+    background-color: #ECECEC;
+}
+
+.countryFlag {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 2px rgba(0,0,0,0.3);
+}
+
+.phoneContainer input {
+    flex: 1;
+    height: 48px;
+    border-radius: 12px;
+    border: none;
+    background-color: #ECECEC;
+    padding: 0 12px;
+    font-size: 1rem;
+}
+
+/* DROPDOWN DE PAÍSES */
+.countryDropdown {
+    display: none;
+    position: absolute;
+    top: 55px;
+    left: 0;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    max-height: 250px;
+    overflow-y: auto;
+    width: 220px;
+    z-index: 100;
+    opacity: 0;
+    transform: scale(0.98);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.countryDropdown.active {
+    display: block;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.countryDropdown::-webkit-scrollbar {
+    width: 6px;
+}
+.countryDropdown::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+#searchCountry {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+#countryList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#countryList li {
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+#countryList li:hover {
+    background-color: #f2f2f2;
+}
+
+#countryList img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 2px rgba(0,0,0,0.3);
+}
+
+/* ========================= */
+/* CONTAINER TIPO DE USUÁRIO */
+/* ========================= */
+.userTypeContainer {
+  position: relative;
+  flex: 0 0 calc(50% - 12px); /* dois por linha */
+  display: flex;
+  flex-direction: column; 
+}
+
+.userTypeBtn {
+  width: 100%;
+  height: 48px;
+  padding: 0 12px;
+  border: none;
+  border-radius: 12px;
+  background-color: #ECECEC;
+  font-size: 1rem;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: 0;
+  color: #606060;
+}
+
+.userTypeBtn:hover{
+    transform: scale(1);
+    background-color: #ECECEC;
+}
+
+.userTypeDropdown {
+  display: none;
+  position: absolute;
+  top: 55px;
+  left: 0;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  width: 100%;
+  z-index: 100;
+  opacity: 0;
+  transform: scale(0.98);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.userTypeDropdown.active {
+  display: block;
+  opacity: 1;
+  transform: scale(1);
+}
+
+#userTypeList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#userTypeList li {
+  padding: 10px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: #2E4152;
+}
+
+#userTypeList li:hover {
+  background-color: #f2f2f2;
+}
+
+/* ========================= */
+/* MODAL */
+/* ========================= */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0; /* cobre toda a tela */
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* garante que fica acima de tudo */
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modalContent {
+  background: #fff;
+  padding: 25px 40px;
+  border-radius: 0.8rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalContent div {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.modalContent p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #2E4152;
+  font-weight: bold;
+}
+
+.modalContent button {
+  background: #4A90E2;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 0 10px;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.modalContent button:hover {
+  background: #4A80E2;
+}
+
+
+/* ========================= */
+/* RESPONSIVIDADE */
+/* ========================= */
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        margin-top: 40px;
+    }
+
+    .inputContainer {
+        flex: 0 0 100%;
+    }
+
+    .countryDropdown {
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    input, .countryBtn, .userTypeBtn {
+        height: 40px;
+        font-size: 0.9rem;
+    }
+}
+
+li{
+    list-style: none;
+    height: 6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px #e0e0e0;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+li:hover{
+    background-color: #ededed;
+}
+
+a{
+  text-decoration: wavy;
+  cursor: pointer;
+  color: #2E4152;
+}

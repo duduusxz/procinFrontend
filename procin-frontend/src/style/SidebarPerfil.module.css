@@ -106,6 +106,7 @@ hr{
   cursor: pointer;
   width: 20%;
   height: 50%;
+  color: black;
 }
 
 .closeBtn:hover{
