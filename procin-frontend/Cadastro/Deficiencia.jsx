@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Deficiencia.css';
 
-const Deficiencia = () => {
+function Deficiencia(){
   const [selectedDeficiency, setSelectedDeficiency] = useState(null);
   const [medicalReport, setMedicalReport] = useState(null);
 
