@@ -1,0 +1,200 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  background-color: #f5f5f5; /* opcional */
+  margin-top: 3rem;
+}
+
+.productContainer {
+  width: 100%;
+  max-width: 800px;
+}
+
+.productCard {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  width: 100%;
+  max-width: 1500px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.297);
+  margin-bottom: 20px;
+}
+
+.productImage {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  margin-right: 15px;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.productImage img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 8px;
+}
+
+.productInfo {
+  flex: 1;
+}
+
+.productTitle {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.productVariation {
+  color: #666;
+  font-size: 0.9em;
+  margin-bottom: 5px;
+}
+
+.productStatus {
+  color: #666;
+  font-size: 0.9em;
+  margin-bottom: 10px;
+}
+
+.productPrice {
+  font-weight: 600;
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+.productActions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-end;
+}
+
+.actionButtons {
+  display: flex;
+}
+
+.avaliacao {
+  color: #999;
+  font-size: 0.8em;
+  margin-left: auto;
+}
+
+/* ---------------------- BOTÕES ---------------------- */
+
+.btnPrimary {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+  background-color: #4a90e2;
+  color: white;
+  transition: all 0.3s ease;
+  width: 13vw; /* botão principal largo */
+  height: 5vh;
+}
+
+.btnPrimary:hover {
+  background-color: #4a80e2;
+}
+
+/* Botão do ícone de lápis (pequeno e quadrado) */
+.btnIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #4a90e2;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 3vw;   /* quadrado pequeno */
+  height: 5vh;  /* quadrado pequeno */
+  transition: all 0.3s ease;
+}
+
+.btnIcon:hover {
+  background-color: #4a80e2;
+}
+
+.btnIcon svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ---------------------- BARRA DE STATUS ---------------------- */
+.barraStatus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 40px;
+  margin-top: 10rem;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #ddd;
+  gap: 3rem;
+}
+
+.linksCategoria {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.linksCategoria a {
+  color: #000000;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  padding: 0.7rem;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+.linksCategoria a:hover {
+  color: #4a80e2;
+  transform: scale(1.05);
+}
+
+.linksCategoria a.active {
+  color: #4a80e2;
+  transform: scale(1.05);
+  background-color: #e7e7e7;
+}
+
+/* Botão de adicionar produto */
+.btnAddProduto {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 0.9em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 15vw;
+  height: auto;
+}
+
+.btnAddProduto:hover {
+  background-color: #4a80e2;
+}
+
+.btnAddProduto svg {
+  width: 18px;
+  height: 18px;
+}
+
+
+button:hover{
+  background-color: #4a80e2;
+  transform: scale(1.05);
+}
