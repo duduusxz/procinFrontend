@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import styles from "../style/sidebarPerfil.module.css";
 import logo from "../assets/logo_preta.png";
 import usuario from "../assets/usuario.webp";
+import { useNavigate } from "react-router-dom";
 
 function PerfilLateral({ onClose }) {
   const [fechando, setFechando] = useState(false);
@@ -19,6 +20,12 @@ function PerfilLateral({ onClose }) {
       return () => clearTimeout(timer);
     }
   }, [fechando, onClose]);
+
+    const navigate = useNavigate()
+  
+      function IrParaProdutosVendedor(){
+        navigate("/meusProdutosVendedor")
+      }
 
   return (
         <div className={styles.overlay} onClick={handleClose}>
@@ -44,7 +51,7 @@ function PerfilLateral({ onClose }) {
           </p>
           <button>Editar perfil</button>
           <button>Mensagens</button>
-          <button>Meus serviços</button>
+          <button onClick={IrParaProdutosVendedor}>Meus produtos</button>
           <hr />
           <p className={styles.notaPerfil}>Nota do perfil: 4,9</p>
         </div>
