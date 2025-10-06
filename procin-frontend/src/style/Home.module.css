@@ -1,7 +1,7 @@
 .menuNav {
     background-color: #4a90e2;
     padding: 20px;
-    color: white;
+    color: rgb(255, 255, 255);
     position: fixed; /* Faz o nav ficar fixo */
     top: 0; /* Sempre no topo */
     left: 0;
