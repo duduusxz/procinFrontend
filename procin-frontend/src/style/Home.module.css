@@ -97,14 +97,14 @@
 }
 
 .navInferior {
-    background-color: #c9dcfd;
+    background-color: #b4ccf7;
     padding: 15px 0;
     display: flex;
     justify-content: center;
     align-items: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: fixed; /* Também fixo, se quiser que acompanhe o scroll */
-    top: 80px; /* Ajuste conforme a altura do menuNav */
+    top: 90px; /* Ajuste conforme a altura do menuNav */
     left: 0;
     width: 100%;
     z-index: 998;

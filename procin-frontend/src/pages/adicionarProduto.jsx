@@ -3,7 +3,7 @@ import Nav from "../components/nav";
 import NavInferior from "../components/navInferior";
 import styles from "../style/editarProduto.module.css";
 
-export default function EditarProduto() {
+export default function AdicionarProduto() {
   const [form, setForm] = useState({
     nome: "",
     descricao: "",
@@ -44,7 +44,7 @@ export default function EditarProduto() {
       <NavInferior />
 
       <main className={styles.wrapper}>
-        <h2 className={styles.title}>Editar Produtos</h2>
+        <h2 className={styles.title}>Adicionar Produtos</h2>
 
         <form
           onSubmit={handleConfirmarInformacoes}
