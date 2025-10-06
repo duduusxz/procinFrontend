@@ -1,4 +1,4 @@
-import styles from "../style/pdd_usuario.module.css";
+import styles from "../style/produtosUsuario.module.css";
 import Nav from "../components/nav";
 import React, { useState } from "react";
 import NavInferior from "../components/navInferior";

@@ -1,4 +1,4 @@
-import { Routes, Route, useNavigation } from "react-router-dom";
+import { Routes, Route} from "react-router-dom";
 import Home from "./pages/home.jsx";
 import Carrinho from "./pages/carrinho.jsx";
 import Login from "./pages/login.jsx";
@@ -7,6 +7,10 @@ import TipoDeficiencia from "./pages/tipoDeficiencia.jsx";
 import ProdutosVendedor from "./pages/produtosVendedor.jsx";
 import EditarProduto from "./pages/editarProduto.jsx";
 import AdicionarProduto from "./pages/adicionarProduto.jsx";
+import PdtFavorito from "./pages/pdtFavorito.jsx";
+import PdtPergunta from "./pages/pdtPergunta.jsx";
+import Pergunta from "./pages/produto.jsx"; 
+import PddUsuario from "./pages/produtosUsuario.jsx";
 
 function App() {
   return (
@@ -20,6 +24,10 @@ function App() {
         <Route path="/meusProdutosVendedor" element={<ProdutosVendedor />}/>
         <Route path="/editarProduto" element={<EditarProduto />}/>
         <Route path="/adicionarProduto" element={<AdicionarProduto />}/>
+        <Route path="/produtosFavoritados" element={<PdtFavorito />}/>
+        <Route path="/produtosPergunta" element={<PdtPergunta />}/>
+        <Route path="/produtos" element={<Pergunta />}/>
+        <Route path="/produtosUsuario" element={<PddUsuario />}/>
       </Routes>
     </div>
   );

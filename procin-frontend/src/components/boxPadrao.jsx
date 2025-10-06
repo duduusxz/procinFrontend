@@ -1,7 +1,7 @@
 import React from 'react';
 import { IoLocationSharp } from "react-icons/io5";
 import { FcLike } from "react-icons/fc";
-import styles from '../style/box_padrao.module.css';
+import styles from '../style/boxPadrao.module.css';
 import Produto from '../assets/produto.png';
 
 const BoxPadrao = ({
