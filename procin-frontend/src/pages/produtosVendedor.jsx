@@ -3,6 +3,7 @@ import Nav from "../components/nav.jsx";
 import CardProdutoVendedor from "../components/cardProdutoVendedor.jsx";
 import styles from "../style/cardProdutoVendedor.module.css";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function ProdutosVendedor() {
   const [categoria, setCategoria] = useState("todos");
@@ -10,6 +11,12 @@ export default function ProdutosVendedor() {
   const handleCategoria = (novaCategoria) => {
     setCategoria(novaCategoria);
   };
+
+    const navigate = useNavigate()
+
+    function IrParaAdicionarProduto(){
+      navigate("/adicionarProduto")
+    }
 
   return (
     <>
@@ -76,7 +83,7 @@ export default function ProdutosVendedor() {
           </a>
         </div>
 
-        <button className={styles.btnAddProduto}>
+        <button className={styles.btnAddProduto} onClick={IrParaAdicionarProduto}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="18"

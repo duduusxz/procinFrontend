@@ -1,4 +1,5 @@
 import styles from "../style/cardProdutoVendedor.module.css";
+import { useNavigate } from "react-router-dom";
 
 export default function CardProdutoVendedor({ categoria }) {
   const produtos = [
@@ -32,6 +33,12 @@ export default function CardProdutoVendedor({ categoria }) {
     categoria === "todos"
       ? produtos
       : produtos.filter((p) => p.status === categoria);
+
+    const navigate = useNavigate();
+  
+    function IrParaEditarProduto() {
+      navigate("/editarProduto");
+    }
 
   return (
     <div className={styles.wrapper}>
@@ -68,7 +75,7 @@ export default function CardProdutoVendedor({ categoria }) {
                 <div className={styles.actionButtons}>
                   <button className={styles.btnPrimary}>Emitir NF</button>
 
-                  <button className={styles.btnIcon}>
+                  <button className={styles.btnIcon} onClick={IrParaEditarProduto}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="18"
