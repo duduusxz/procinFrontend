@@ -1,0 +1,27 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+  min-height: 100vh;
+  width: 100vw; 
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  flex-direction: row;
+  margin: 0; 
+}
+.cima {
+  gap: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.baixo {
+  gap: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
