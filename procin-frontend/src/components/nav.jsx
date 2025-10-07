@@ -15,6 +15,10 @@ export default function Nav() {
     navigate("/login");
   }
 
+  function IrParaFavoritos() {
+    navigate("/produtosFavoritados");
+  }
+
   function IrParaCarrinho() {
     navigate("/meuCarrinho");
   }
@@ -40,7 +44,7 @@ export default function Nav() {
           </div>
 
           <div className={styles.icons}>
-            <img src={coracao} alt="Ícone 1" />
+            <img src={coracao} alt="Ícone 1" onClick={IrParaFavoritos}/>
             <img src={carrinho} alt="Ícone 2" onClick={IrParaCarrinho} />
             <img src={perfil} alt="Ícone 3" onClick={() => setMostrarPerfil(true)} />
           </div>

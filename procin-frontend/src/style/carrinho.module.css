@@ -1,9 +1,18 @@
+.wrapper{
+  display: flex;
+  justify-content: center;
+  background-color: #f5f5f5; /* opcional */
+  margin-top: 10rem;
+  width: 100vw;
+}
+
 .carrinhoContainer {
   max-width: 950px;
   margin: 20px auto;
   background: #fff;
   padding: 20px 25px;
   border-radius: 8px;
+  width: 100vw;
 }
 
 .carrinhoContainer h2 {

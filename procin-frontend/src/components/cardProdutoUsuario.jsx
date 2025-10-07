@@ -1,7 +1,7 @@
 import styles from "../style/cardProdutoVendedor.module.css";
 import { useNavigate } from "react-router-dom";
 
-export default function CardProdutoVendedor({ categoria }) {
+export default function CardProdutoUsuario({ categoria }) {
   const produtos = [
     {
       id: 1,
@@ -15,7 +15,7 @@ export default function CardProdutoVendedor({ categoria }) {
       id: 2,
       nome: "Produto 2",
       variacao: "Azul x2",
-      status: "nao-pago",
+      status: "a caminho",
       preco: "R$ 85,00",
       imagem: "https://m.media-amazon.com/images/I/61H+dYcPgRL._AC_SX569_.jpg",
     },
@@ -23,7 +23,7 @@ export default function CardProdutoVendedor({ categoria }) {
       id: 3,
       nome: "Produto 3",
       variacao: "Vermelha x3",
-      status: "concluido",
+      status: "enviado",
       preco: "R$ 150,00",
       imagem: "https://m.media-amazon.com/images/I/61H+dYcPgRL._AC_SX569_.jpg",
     },
@@ -72,22 +72,11 @@ export default function CardProdutoVendedor({ categoria }) {
                   <strong>Total da compra:</strong> {p.preco}
                 </p>
 
-                <div className={styles.actionButtons}>
-                  <button className={styles.btnPrimary}>Emitir NF</button>
+                <div className={styles.actionButtonss}>
+                  <button className={styles.btnAvaliar}>Avaliar</button>
 
-                  <button className={styles.btnIcon} onClick={IrParaEditarProduto}>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="18"
-                      fill="white"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 
-                        7.04a1.003 1.003 0 0 0 0-1.42l-2.34-2.34a1.003 
-                        1.003 0 0 0-1.42 0l-1.83 1.83 3.75 3.75 1.84-1.82z"
-                      />
-                    </svg>
+                  <button className={styles.btnIconn}>
+                    Comprar Novamente
                   </button>
                 </div>
               </div>

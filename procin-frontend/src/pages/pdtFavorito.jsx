@@ -10,8 +10,12 @@ export default function PdtFavorito() {
       <Nav />
       <NavInferior />
       {/* Fim do NavBar */}
-      <main className={styles.main}>"
-        <div className={styles.cima}>
+      <main className={styles.wrapper}>
+        <div className={styles.baixo}>
+        <BoxPadrao />
+        <BoxPadrao />
+        </div>
+        <div className={styles.baixo}>
         <BoxPadrao />
         <BoxPadrao />
         </div>

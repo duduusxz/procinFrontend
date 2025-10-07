@@ -1,29 +1,30 @@
-.main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    gap: 20px;
-    min-height: 100vh;
-    width: 100vw; 
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-    flex-direction: row;
-    margin: 0; 
-  }
-  
-  .cima {
-    gap: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f3f3f3;
+  padding: 60px 0;
+  min-height: 100vh;
+  margin-top: 10rem;
+}
 
+/* Parte de cima e de baixo: cards lado a lado */
+.cima,
+.baixo {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  margin-bottom: 40px;
+  flex-wrap: wrap; /* permite responsividade */
+}
+
+/* 🔹 Responsividade: empilha os cards no mobile */
+@media (max-width: 900px) {
+  .cima,
   .baixo {
-    gap: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
+    gap: 20px;
   }
+}

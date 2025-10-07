@@ -10,6 +10,7 @@ export default function Carrinho() {
     <Nav />
     <NavInferior />
     
+  <div className={styles.wrapper}>
     <main className={styles.carrinhoContainer}>
       <h2>Carrinho</h2>
 
@@ -77,6 +78,7 @@ export default function Carrinho() {
         </div>
       </div>
     </main>
+    </div>
     </>
   );
 }

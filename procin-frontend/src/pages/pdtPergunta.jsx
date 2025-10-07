@@ -37,7 +37,9 @@ export default function PdtPergunta() {
     <div className={styles.container}>
       <Nav />
       <NavInferior />
-      <main className={styles.main}>
+      <main className={styles.wrapper}>
+        <div className={styles.tudo}>
+        <h1>O que você precisa saber sobre esse produto?</h1>
         <div className={styles.produto}>
           <img src={imagem} alt={`Imagem do produto: ${nome}`} />
           <div className={styles.info}>
@@ -48,7 +50,6 @@ export default function PdtPergunta() {
             <p className={styles.preco}>{preco}</p>
           </div>
         </div>
-        <h1>O que você precisa saber sobre esse produto?</h1>
         <div className={styles.pergunta}>
           <textarea
             name="pergunta"
@@ -63,21 +64,8 @@ export default function PdtPergunta() {
             Enviar Pergunta
           </button>
         </div>
-        {mensagem && <p className={styles.mensagem}>{mensagem}</p>}
-        <div className={styles.comentarios}>
-          <h2>Perguntas enviadas</h2>
-          {comentarios.length === 0 ? (
-            <p>Nenhuma pergunta ainda. Seja o primeiro!</p>
-          ) : (
-            <ul>
-              {comentarios.map((c, i) => (
-                <li key={i}>{c}</li>
-              ))}
-            </ul>
-          )}
         </div>
       </main>
-      <BotaoVoltar />
     </div>
   );
 }

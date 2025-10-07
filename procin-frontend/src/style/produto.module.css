@@ -1,7 +1,14 @@
 .galeria {
     display: flex;
     gap: 20px;
-    flex-direction: column;
+    height: auto;
+    width: 90%;
+  }
+
+  .lados{
+    display: flex;
+    width: 100%;
+    gap: 3rem;
   }
   
   .container {
@@ -13,7 +20,6 @@
     box-sizing: border-box;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
   }
   
   .esquerda {
@@ -30,8 +36,8 @@
   }
   
   .miniaturas img {
-    width: 80px;
-    height: 80px;
+    width: 8vw;
+    height: 17vh;
     object-fit: cover;
     cursor: pointer;
     border-radius: 8px;
@@ -48,11 +54,12 @@
   }
   
   .principal img {
-    width: 400px;
-    height: 400px;
-    object-fit: contain;
+    width: 30vw;
+    height: 72vh;
+    object-fit: cover;
     border-radius: 12px;
     background: #f5f5f5;
+    
   }
   
   .direita {
@@ -113,45 +120,30 @@
     color: #777;
     margin-bottom: 12px;
   }
+
   
-  button,
-  .adicionar,
-  .calcular,
-  .visitarperfil {
-    background: rgba(255, 255, 255, 0.18);
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    backdrop-filter: blur(8px) saturate(180%);
-    -webkit-backdrop-filter: blur(8px) saturate(180%);
-    color: #1565c0;
-    font-weight: 500;
-    transition: background 0.2s, box-shadow 0.2s;
-  }
-  
-  button:hover,
-  .adicionar:hover,
-  .calcular:hover,
-  .visitarperfil:hover {
-    background: rgba(255, 0, 0, 0.28);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-  }
-  
-  .main {
-    display: flex;
-    flex-direction: row;
-    gap: 40px;
-    padding: 40px;
-    width: 98vw;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* ocupa a tela toda */
+  background-color: #f5f5f5; /* opcional */
+  width: 90vw;
+  margin-top: 6rem;
+}
   
   .cartao {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .calcular, .adicionar{
+    width: 50%;
+    align-self: flex-start  ;
+    height: auto;
+    min-height: 5vh;
   }
   
   .valor {
@@ -166,8 +158,6 @@
   .botoes {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin-bottom: 10px;
     justify-content: center;
     align-items: stretch;
   }
@@ -223,11 +213,13 @@
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: all 0.3s;
+    width: 50%;
+    height: auto;
   }
   
   .visitarperfil:hover {
-    background: #357abd;
+    background: #4a80e2;
   }
   
   .visitarperfil:active {
@@ -330,27 +322,7 @@
   
 /* Botões com efeito vidro */
 
-
-button,
-.adicionar,
-.calcular,
-.visitarperfil {
-  background: #4A90E2;
-  border-radius: 12px;
-  border: none;
-  box-shadow: 0 4px 24px rgba(31, 38, 135, 0.12);
-  backdrop-filter: blur(10px) saturate(180%);
-  -webkit-backdrop-filter: blur(10px) saturate(180%);
-  color: #FFFFFF;
-  font-weight: 600;
-  transition: background 0.2s, box-shadow 0.2s;
-}
-
-button:hover,
-.adicionar:hover,
-.calcular:hover,
-.visitarperfil:hover {
-  background: rgba(255, 255, 255, 0.38);
-  color: #4A90E2;
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.18);
+.pergunta{
+  text-decoration: underline #222;
+  cursor: pointer;
 }

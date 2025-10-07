@@ -5,10 +5,11 @@ import livros from "../assets/livros.png";
 import limpeza from "../assets/limpeza.png";
 import feminino from "../assets/feminino.png";
 import masculino from "../assets/masculino.png";
-import acessorios from "../assets/Acessorios.jpg";
-import eletronicos from "../assets/eletronicos.jpg";
+import acessorios from "../assets/acessorios.png";
+import eletronicos from "../assets/eletronicos.png";
 import styles from "../style/home.module.css";
 import CardProduto from "../components/cardProduto.jsx";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
   const [favoritos, setFavoritos] = useState([false, false, false, false]);

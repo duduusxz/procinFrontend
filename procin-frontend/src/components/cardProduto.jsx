@@ -1,10 +1,18 @@
 import React from "react";
 import gostar from "../assets/gostar.png";
 import styles from "../style/Home.module.css";
+import { useNavigate } from "react-router-dom";
 
 export default function CardProduto({ idx, favorito, toggleFavorito }) {
+
+  const navigate = useNavigate();
+  
+    function IrParaProdutos() {
+      navigate("/produtos");
+    }
+
   return (
-    <div className={styles.bloco}>
+    <div className={styles.bloco} onClick={IrParaProdutos}>
       <div className={styles.topo}>
         <div className={styles.estrelas}>
           <span>★ ★ ★ ★ ☆</span> 4.0

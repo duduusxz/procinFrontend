@@ -3,6 +3,16 @@
   justify-content: center;
   background-color: #f5f5f5; /* opcional */
   margin-top: 3rem;
+  width: 100vw;
+}
+
+.wrapperr{
+  display: flex;
+  justify-content: center;
+  background-color: #f5f5f5; /* opcional */
+  margin-top: 3rem;
+  width: 100vw;
+  margin-top: 10rem;
 }
 
 .productContainer {
@@ -77,6 +87,11 @@
   display: flex;
 }
 
+.actionButtonss{
+  display: flex;
+  flex-direction: column;
+}
+
 .avaliacao {
   color: #999;
   font-size: 0.8em;
@@ -123,6 +138,41 @@
 .btnIcon svg {
   width: 18px;
   height: 18px;
+}
+
+.btnIconn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #4a90e2;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: auto;
+  font-size: 0.9em;
+  height: 5vh;  /* quadrado pequeno */
+  transition: all 0.3s ease;
+}
+
+.btnIconn:hover {
+  background-color: #4a80e2;
+}
+
+.btnAvaliar{
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+  background-color: #4a90e2;
+  color: white;
+  transition: all 0.3s ease;
+  width: 13vw; /* botão principal largo */
+  height: 5vh;
+}
+
+.btnAvaliar:hover {
+  background-color: #4a80e2;
 }
 
 /* ---------------------- BARRA DE STATUS ---------------------- */

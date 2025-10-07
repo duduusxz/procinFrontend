@@ -3,6 +3,11 @@ import { Link } from "react-router-dom";
 import styles from "../style/produto.module.css";
 import Navbar from "../components/nav.jsx";
 import NavInferior from "../components/navInferior";
+import ProdutoImagem1 from "../assets/produto.jpg"
+import ProdutoImagem2 from "../assets/produto2.jpg"
+import ProdutoImagem3 from "../assets/produto3.jpg"
+import ProdutoImagem4 from "../assets/produto4.jpeg"
+import { useNavigate } from "react-router-dom";
 
 export default function Pergunta() {
   const Produto = {
@@ -17,10 +22,10 @@ export default function Pergunta() {
   const { nome, preco, descricao, localizacao, vendedor } = Produto;
 
   const imagens = [
-    "/assets/produto1.jpg",
-    "/assets/produto2.jpg",
-    "/assets/produto3.jpg",
-    "/assets/produto4.jpg",
+    ProdutoImagem1,
+    ProdutoImagem2,
+    ProdutoImagem3,
+    ProdutoImagem4
   ];
   const [imagemAtual, setImagemAtual] = useState(imagens[0]);
 
@@ -41,6 +46,12 @@ export default function Pergunta() {
       resposta: "O prazo de entrega é de 5 a 7 dias úteis.",
     },
   ];
+
+    const navigate = useNavigate()
+
+    function IrParaPergunta(){
+      navigate("/produtosPergunta")
+    }
 
   // Função para exibir as perguntas e respostas
   function ExibirPerguntas() {
@@ -84,7 +95,8 @@ export default function Pergunta() {
       <Navbar />
       <NavInferior />
       <div className={styles.container}>
-        <main className={styles.main}>
+        <main className={styles.wrapper}>
+          <div className={styles.lados}>
           <div className={styles.esquerda}>
             <div className={styles.galeria}>
               <div className={styles.miniaturas}>
@@ -107,7 +119,6 @@ export default function Pergunta() {
           </div>
 
           <div className={styles.direita}>
-            <progress value="70" max="100"></progress>
             <p>Vendido e entregue por Soma</p>
             <div className={styles.precificar}>
               <div className={styles.cartao}>
@@ -130,7 +141,7 @@ export default function Pergunta() {
               <button className={styles.adicionar}>
                 Adicionar ao carrinho
               </button>
-              <p>Enviar mensagem para o vendedor</p>
+              <p onClick={IrParaPergunta} className={styles.pergunta}>Enviar mensagem para o vendedor</p>
             </div>
             <div className={styles.vendedor}>
               <img src="/assets/vendedor.jpg" alt={vendedor} />
@@ -140,6 +151,7 @@ export default function Pergunta() {
               </div>
               <button className={styles.visitarperfil}>Visitar Perfil</button>
             </div>
+          </div>
           </div>
         </main>
 

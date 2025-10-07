@@ -1,65 +1,30 @@
-import styles from "../style/produtosUsuario.module.css";
-import Nav from "../components/nav";
-import React, { useState } from "react";
-import NavInferior from "../components/navInferior";
-
-// Função para pegar as informações do produto
-function getProduto() {
-  return {
-    nome: "Produto 1",
-    variacao: "Variação A",
-    quantidade: 2,
-    status: "Entregue",
-    total: 100.0,
-    imagem: "caminho/para/imagem.jpg", // Adicionando uma imagem ao produto
-  };
-}
+import NavInferior from "../components/navInferior.jsx";
+import Nav from "../components/nav.jsx";
+import CardProdutoUsuario from "../components/cardProdutoUsuario.jsx";
+import styles from "../style/cardProdutoVendedor.module.css";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function PddUsuario() {
-  const [produto, setProduto] = useState(getProduto());
+  const [categoria, setCategoria] = useState("todos");
 
-  // Função para avaliação do produto
-  const handleAvaliacao = () => {
-    console.log("Avaliar produto");
-    // Exemplo de como você poderia atualizar o estado de produto
-    setProduto((prevProduto) => ({
-      ...prevProduto,
-      status: "Avaliado",
-    }));
+  const handleCategoria = (novaCategoria) => {
+    setCategoria(novaCategoria);
   };
 
-  // Função para comprar novamente
-  const handleComprarNovamente = () => {
-    console.log("Comprar novamente");
-    // Exemplo de como você poderia reiniciar o produto para seu estado inicial
-    setProduto(getProduto());
-  };
+    const navigate = useNavigate()
+
+    function IrParaAdicionarProduto(){
+      navigate("/adicionarProduto")
+    }
 
   return (
-    <div>
+    <>
       <Nav />
       <NavInferior />
-      <main className={styles.main}>
-        <div className={styles.box}>
-          <div className={styles.esquerda}>
-            {/* Exibindo a imagem do produto */}
-            <img src={produto.imagem} alt={produto.nome} className={styles.imagemProduto} />
-            <div className={styles.info}>
-              <p>{produto.nome}</p>
-              <p>Variação: {produto.variacao}</p>
-              <p>Quantidade: {produto.quantidade}</p>
-              <p>Status: {produto.status}</p>
-              <h1>Total da compra: R$ {produto.total.toFixed(2)}</h1>
-            </div>
-          </div>
-          <div className={styles.direita}>
-            <p>{produto.status === "Avaliado" ? "Avaliação feita" : "Não avaliado"}</p>
-            {/* Botões com as funções de click */}
-            <button className={styles.avaliar} onClick={handleAvaliacao}>Avaliar</button>
-            <button className={styles.comprar} onClick={handleComprarNovamente}>Comprar Novamente</button>
-          </div>
-        </div>
-      </main>
-    </div>
+      <div className={styles.wrapperr}>
+      <CardProdutoUsuario categoria={categoria} />
+      </div>
+    </>
   );
 }

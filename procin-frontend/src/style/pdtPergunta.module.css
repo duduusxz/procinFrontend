@@ -1,33 +1,35 @@
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
-    flex-direction: column;
-  }
-  
-  .container h1 {
+.container{
+  display: flex;
+  justify-content: center;
+}
+
+.tudo{
+  background-color: #ffffff;
+  padding: 5rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 1rem;
+}
+
+.container h1 {
     font-family: Arial, sans-serif;
     color: #4A90E2;
+    margin: 2rem;
   }
   
-  .main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: #ffffff;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-    gap: 20px;
-    padding: 20px;
-    min-height: 50vh;
-    width: 80%;
-    border: none;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* ocupa a tela toda */
+  background-color: #f5f5f5; /* opcional */
+  width: 90vw;
+  margin-top: 6rem;
+  flex-direction: column;
+}
   
   .produto {
     display: flex;
@@ -65,7 +67,10 @@
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .enviar:hover {
@@ -73,13 +78,19 @@
   }
   
   input, textarea {
-    width: 100%;
+    width: 50vw;
     padding: 10px;
     margin-bottom: 10px;
-    border: 3px solid #4A90E2;
+    border: 1.4px solid #4A90E2;
     border-radius: 7px;
     font-size: 16px;
     font-family: Arial, sans-serif;
+  }
+
+  textarea{
+    max-height: 30vh;
+    font-family: 'Poppins';
+    font-size: 14px;
   }
   
   .mensagem {
