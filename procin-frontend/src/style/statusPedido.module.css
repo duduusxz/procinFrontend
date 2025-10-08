@@ -1,0 +1,101 @@
+.container {
+  background: #f5f5f5;
+  border-radius: 10px;
+  padding: 40px 20px;
+  max-width: 1100px;
+  margin: 2rem auto;
+  margin-top: 20rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Linha principal */
+.timeline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* Cada etapa (check + círculo + texto) */
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  min-width: 120px;
+}
+
+/* Ícone verde (fica acima do círculo) */
+.iconConcluido {
+  background: #34c759;
+  color: white;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  position: absolute;
+  top: -30px; /* sobe o ícone */
+}
+
+/* Círculos numerados */
+.circle {
+  width: 55px;
+  height: 55px;
+  background: #3b82f6;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+/* Nome da etapa */
+.label {
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 1.2;
+  margin-top: 4px;
+  width: 110px;
+}
+
+/* Linhas de ligação */
+.line {
+  flex: 1;
+  height: 2px;
+  background: #3b82f6;
+  margin: 0 8px;
+  z-index: 1;
+  position: relative;
+  top: -10px; /* alinha no meio do círculo */
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .timeline {
+    flex-direction: column;
+  }
+
+  .line {
+    width: 2px;
+    height: 40px;
+    margin: 0;
+    top: 0;
+  }
+
+  .step {
+    min-width: auto;
+    margin-bottom: 10px;
+  }
+}
+
+.label{
+    width: 100%;
+}

@@ -11,6 +11,9 @@ import PdtFavorito from "./pages/pdtFavorito.jsx";
 import PdtPergunta from "./pages/pdtPergunta.jsx";
 import Pergunta from "./pages/produto.jsx"; 
 import PddUsuario from "./pages/produtosUsuario.jsx";
+import Pagamento from "./pages/pagamento.jsx";
+import PerfilVendedor from "./pages/perilVendedor.jsx";
+import StatusPedido from "./pages/statusPedidio.jsx";
 
 function App() {
   return (
@@ -28,6 +31,9 @@ function App() {
         <Route path="/produtosPergunta" element={<PdtPergunta />}/>
         <Route path="/produtos" element={<Pergunta />}/>
         <Route path="/produtosUsuario" element={<PddUsuario />}/>
+        <Route path="/finalizarPagamento" element={<Pagamento />}/>
+        <Route path="/perfilVendedor" element={<PerfilVendedor />}/>
+        <Route path="/statusPedido" element={<StatusPedido />}/>
       </Routes>
     </div>
   );
