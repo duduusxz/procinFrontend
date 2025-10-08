@@ -21,7 +21,7 @@ export default function PdtPergunta() {
 
   const [pergunta, setPergunta] = useState("");
   const [comentarios, setComentarios] = useState([]);
-  const [mensagem, setMensagem] = useState("");
+  const [ setMensagem] = useState("");
 
   {/* Função para enviar a pergunta */}
   const handleEnviar = () => {
@@ -59,6 +59,7 @@ export default function PdtPergunta() {
             placeholder="Escreva sua pergunta aqui..."
             value={pergunta}
             onChange={(e) => setPergunta(e.target.value)}
+            className={styles.textarea}
           />
           <button className={styles.enviar} onClick={handleEnviar}>
             Enviar Pergunta

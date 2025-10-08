@@ -30,7 +30,7 @@ function App() {
         <Route path="/produtosFavoritados" element={<PdtFavorito />}/>
         <Route path="/produtosPergunta" element={<PdtPergunta />}/>
         <Route path="/produtos" element={<Pergunta />}/>
-        <Route path="/produtosUsuario" element={<PddUsuario />}/>
+        <Route path="/meusProdutosUsuario" element={<PddUsuario />}/>
         <Route path="/finalizarPagamento" element={<Pagamento />}/>
         <Route path="/perfilVendedor" element={<PerfilVendedor />}/>
         <Route path="/statusPedido" element={<StatusPedido />}/>
