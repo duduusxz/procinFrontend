@@ -13,15 +13,35 @@ export default function Login() {
     setShowPassword((prev) => !prev);
   }
 
-  function clickEntrar(e) {
-    e.preventDefault();
+  async function clickEntrar(e) {
+  e.preventDefault();
 
-    const json = { email, senha };
-    const informacoes_login = JSON.stringify(json);
-    console.log(informacoes_login);
+  try {
+    const resposta = await fetch("http://soma-development.page.gd/auth/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, senha }),
+      credentials: "include", // ESSENCIAL para enviar e receber cookies
+    });
 
-    // Aqui você pode implementar a lógica para enviar os dados ao back-end
+    if (!resposta.ok) {
+      throw new Error("Usuário ou senha incorretos");
+    }
+
+    // Lê o JSON de resposta
+    const data = await resposta.json();
+    console.log("Login OK:", data);
+
+    // Redireciona após o login
+    navigate("/");
+
+  } catch (erro) {
+    console.error("Erro no login:", erro);
+    alert(erro.message);
   }
+}
 
     const navigate = useNavigate()
 
@@ -48,7 +68,7 @@ export default function Login() {
           <input
             className={styles.input}
             type="text"
-            name="email_usuario"
+            name="email"
             id="email_usuario"
             required
             placeholder="Digite seu email"
@@ -64,7 +84,7 @@ export default function Login() {
             <input
               className={`${styles.input} ${styles.inputContainerInput}`}
               type={showPassword ? "text" : "password"}
-              name="senha_usuario"
+              name="senha"
               id="senha_usuario"
               minLength={8}
               placeholder="Digite sua senha"

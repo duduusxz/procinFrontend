@@ -305,6 +305,9 @@ function Cadastro() {
           </button>
 
           <p><a href="" onClick={IrParaLogin}>Fazer Login</a></p>
+
+          <input type="hidden" name="tipo_conta"/>
+
         </form>
       </div>
 
