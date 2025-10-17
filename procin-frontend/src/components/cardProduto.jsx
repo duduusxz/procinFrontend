@@ -1,6 +1,6 @@
 import React from "react";
 import gostar from "../assets/gostar.png";
-import styles from "../style/Home.module.css";
+import styles from "../style/home.module.css";
 import { useNavigate } from "react-router-dom";
 
 export default function CardProduto({ idx, favorito, toggleFavorito }) {

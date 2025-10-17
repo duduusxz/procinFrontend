@@ -18,24 +18,27 @@ export default function Login() {
     e.preventDefault();
 
     try {
-      const resposta = await fetch("http://soma-development.page.gd/auth/cadastrar", {
+      const resposta = await fetch("http://localhost:8081/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, senha }),
         credentials: "include",
       });
 
-      if (!resposta.ok) {
+      const data = await resposta.json();
+      
+      if (data.status === false) {
         throw new Error("Usuário ou senha incorretos");
       }
+      
+      if (data.status === 'success') {
 
-      const data = await resposta.json();
-
-      // Armazena os tokens no localStorage
-      localStorage.setItem("access_token", data.access);
-      localStorage.setItem("refresh_token", data.refresh);
-
-      navigate("/");
+        // Armazena os tokens no localStorage
+        localStorage.setItem("access_token", data.access);
+        localStorage.setItem("refresh_token", data.refresh);
+  
+        navigate("/");
+      }
     } catch (erro) {
       alert(erro.message);
     }
