@@ -106,16 +106,16 @@
 }
 
 .opcoesPagamento button:hover {
-  background: #4a80e2;
+  background: #4169E1;
 }
 
 .opcoesPagamento button:active {
-  background: #4a80e2;
+  background: #4169E1;
 }
 
 
 .entregaTexto {
-  color: #4a90e2;
+  color: #4169E1;
   font-size: 0.9rem;
 }
 
@@ -135,12 +135,12 @@
 
 .total {
   font-weight: 600;
-  color: #1a73e8;
+  color: #4169E1;
 }
 
 .botaoFinalizar {
   width: 100%;
-  background: #4a90e2;
+  background: #4169E1;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -152,7 +152,7 @@
 }
 
 .botaoFinalizar:hover {
-  background: #4a80e2;
+  background: #345edb;
 }
 
 button{

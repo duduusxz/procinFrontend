@@ -111,7 +111,7 @@
 }
 
 .acoes button {
-  background: #1a73e8;
+  background: #4169E1;
   color: white;
   border: none;
   border-radius: 8px;
@@ -122,7 +122,7 @@
 }
 
 .acoes button:hover {
-  background: #155fc2;
+  background: rgb(12, 80, 170);
 }
 
 .favorito {

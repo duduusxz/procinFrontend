@@ -100,7 +100,7 @@
 }
 
 .acoes i.fa-heart {
-  color: #4a90e2;
+  color: #4169E1;
 }
 
 .total {
@@ -110,12 +110,12 @@
 }
 
 .total strong {
-  color: #4a90e2;
+  color: #4169E1;
   font-size: 15px;
 }
 
 .btnContinuar {
-  background: #4a90e2;
+  background: #4169E1;
   color: #fff;
   border: none;
   padding: 8px 18px;
@@ -125,5 +125,5 @@
 }
 
 .btnContinuar:hover {
-  background: #357ab8;
+  background: rgb(39, 115, 182);
 }

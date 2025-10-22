@@ -106,7 +106,7 @@
   border-radius: 4px;
   cursor: pointer;
   font-size: 0.9em;
-  background-color: #4a90e2;
+  background-color: #4169E1;
   color: white;
   transition: all 0.3s ease;
   width: 13vw; /* botão principal largo */
@@ -114,7 +114,7 @@
 }
 
 .btnPrimary:hover {
-  background-color: #4a80e2;
+  background-color: #315cdf;
 }
 
 /* Botão do ícone de lápis (pequeno e quadrado) */
@@ -122,7 +122,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #4a90e2;
+  background-color: #4169E1;
   border: none;
   border-radius: 6px;
   cursor: pointer;
@@ -132,7 +132,7 @@
 }
 
 .btnIcon:hover {
-  background-color: #4a80e2;
+  background-color: rgb(59, 118, 226);
 }
 
 .btnIcon svg {
@@ -144,7 +144,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #4a90e2;
+  background-color: #4169E1;
   border: none;
   border-radius: 6px;
   cursor: pointer;
@@ -155,7 +155,7 @@
 }
 
 .btnIconn:hover {
-  background-color: #4a80e2;
+  background-color: #305bdb;
 }
 
 .btnAvaliar{
@@ -164,7 +164,7 @@
   border-radius: 4px;
   cursor: pointer;
   font-size: 0.9em;
-  background-color: #4a90e2;
+  background-color: #4169E1;
   color: white;
   transition: all 0.3s ease;
   width: 13vw; /* botão principal largo */
@@ -172,7 +172,7 @@
 }
 
 .btnAvaliar:hover {
-  background-color: #4a80e2;
+  background-color: #325cdb;
 }
 
 /* ---------------------- BARRA DE STATUS ---------------------- */
@@ -205,12 +205,12 @@
 }
 
 .linksCategoria a:hover {
-  color: #4a80e2;
+  color: rgb(57, 116, 226);
   transform: scale(1.05);
 }
 
 .linksCategoria a.active {
-  color: #4a80e2;
+  color: #325cdb;
   transform: scale(1.05);
   background-color: #e7e7e7;
 }
@@ -220,7 +220,7 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  background-color: #4a90e2;
+  background-color: #4169E1;
   color: white;
   border: none;
   border-radius: 6px;
@@ -234,7 +234,7 @@
 }
 
 .btnAddProduto:hover {
-  background-color: #4a80e2;
+  background-color: #3762e2;
 }
 
 .btnAddProduto svg {
@@ -244,6 +244,6 @@
 
 
 button:hover{
-  background-color: #4a80e2;
+  background-color: rgb(59, 118, 226);
   transform: scale(1.05);
 }

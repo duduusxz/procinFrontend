@@ -31,7 +31,7 @@
 
 /* Mantém o visual original do container */
 .container {
-  background-color: #4A90E2;
+  background-color: #4169E1;
   border-radius: 1rem;
   padding: 30px;
   width: 720px;
@@ -108,7 +108,7 @@ input {
 
 /* ESTADO DE FOCO */
 input:focus, select:focus, button:focus {
-    outline: 2px solid #4A90E2;
+    outline: 2px solid #4169E1;
     outline-offset: 2px;
 }
 
@@ -140,7 +140,7 @@ input:focus, select:focus, button:focus {
 .cadastrar {
     flex: 0 0 100%;        /* ocupa linha inteira */
     height: 50px;
-    background: #4A90E2;
+    background: #4169E1;
     border: none;
     border-radius: 10px;
     color: white;
@@ -391,7 +391,7 @@ input:focus, select:focus, button:focus {
 }
 
 .modalContent button {
-  background: #4A90E2;
+  background: #4169E1;
   color: white;
   border: none;
   padding: 10px 25px;
@@ -407,7 +407,7 @@ input:focus, select:focus, button:focus {
 }
 
 .modalContent button:hover {
-  background: #4A80E2;
+  background: #3059d3;
 }
 
 

@@ -102,8 +102,8 @@
 
 /* Classe específica para quando selecionado */
 .selectSquareSelected {
-  background-color: #4a90e2;
-  border-color: #357abd;
+  background-color: #4169E1;
+  border-color: #4169E1;
 }
 
 /* Container Laudo Médico */
@@ -188,7 +188,7 @@
 }
 
 .uploadLabel:hover {
-  background-color: #4a80e2;
+  background-color: #4169E1;
   transform: scale(1.05);
 }
 
@@ -201,7 +201,7 @@
 .btnEnviar {
   width: 100%;
   padding: 12px;
-  background-color: #4a90e2;
+  background-color: #4169E1;
   color: #fff;
   border: none;
   border-radius: 0.5rem;
@@ -215,7 +215,7 @@
 }
 
 .btnEnviar:hover {
-  background-color: #4a80e2;
+  background-color: #345edf;
   transform: scale(1.05);
 }
 
