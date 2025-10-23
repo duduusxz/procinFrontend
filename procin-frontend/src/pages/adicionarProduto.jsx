@@ -50,7 +50,7 @@ export default function AdicionarProduto() {
         tamanho_produto: form.tamanho,
       };
 
-      const resposta = await fetch("http://localhost:8081/produtos/criarProduto", {
+      const resposta = await fetch("http://localhost:8081/produtos/cadastrarProduto", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -106,7 +106,7 @@ export default function AdicionarProduto() {
       const formData = new FormData();
       formData.append("imagem_produto", foto);
 
-      const resposta = await fetch("http://localhost:8081/auth/adicionarFoto", {
+      const resposta = await fetch("http://localhost:8081/produtos/cadastrarProduto", {
         method: "POST",
         headers: {
           "Authorization": `Bearer ${token}`,
