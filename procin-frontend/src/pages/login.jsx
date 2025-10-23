@@ -22,21 +22,26 @@ export default function Login() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, senha }),
-        credentials: "include",
+        credentials: "include", // 🔥 IMPORTANTE: permite cookies HttpOnly
       });
 
       const data = await resposta.json();
-      
-      if (data.status === false) {
-        throw new Error("Usuário ou senha incorretos");
-      }
-      
-      if (data.status === 'success') {
 
-        // Armazena os tokens no localStorage
+      if (!resposta.ok || data.status === false) {
+        throw new Error(data.message || "Usuário ou senha incorretos");
+      }
+
+      if (data.status === "success") {
+        /**
+         * Esperado:
+         * - Backend retorna access_token no corpo
+         * - Backend seta refresh_token em cookie HttpOnly
+         */
+
+        // 🔒 Armazena APENAS o access_token no localStorage
         localStorage.setItem("access_token", data.access);
-        localStorage.setItem("refresh_token", data.refresh);
-  
+
+        // refresh_token fica seguro no cookie HttpOnly, configurado pelo backend
         navigate("/");
       }
     } catch (erro) {
@@ -54,12 +59,19 @@ export default function Login() {
 
   return (
     <>
-      <img src={logo} alt="Logo SOMA" className={styles.logo} onClick={IrParaHome} />
+      <img
+        src={logo}
+        alt="Logo SOMA"
+        className={styles.logo}
+        onClick={IrParaHome}
+      />
       <div className={styles.wrapper}>
         <div className={styles.container}>
           <h2 className={styles.title}>Login</h2>
           <form className={styles.form} method="post" onSubmit={clickEntrar}>
-            <label className={styles.label} htmlFor="email_usuario">Usuário</label>
+            <label className={styles.label} htmlFor="email_usuario">
+              Usuário
+            </label>
             <input
               className={styles.input}
               type="text"
@@ -69,7 +81,9 @@ export default function Login() {
               value={email}
               onChange={e => setEmail(e.target.value)}
             />
-            <label className={styles.label} htmlFor="senha_usuario">Senha</label>
+            <label className={styles.label} htmlFor="senha_usuario">
+              Senha
+            </label>
             <div className={styles.inputContainer}>
               <input
                 className={`${styles.input} ${styles.inputContainerInput}`}
@@ -88,9 +102,15 @@ export default function Login() {
                 alt={showPassword ? "Esconder senha" : "Mostrar senha"}
               />
             </div>
-            <a href="#" className={styles.link}>Esqueci a senha</a>
-            <button type="submit" className={styles.entrarLogin}>Entrar</button>
-            <p><a onClick={IrParaCadastro}>Cadastre-se</a></p>
+            <a href="#" className={styles.link}>
+              Esqueci a senha
+            </a>
+            <button type="submit" className={styles.entrarLogin}>
+              Entrar
+            </button>
+            <p>
+              <a onClick={IrParaCadastro}>Cadastre-se</a>
+            </p>
           </form>
         </div>
       </div>
