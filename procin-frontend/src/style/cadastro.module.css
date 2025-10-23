@@ -182,7 +182,7 @@ input:focus, select:focus, button:focus {
     height: 48px;
     cursor: pointer;
     font-size: 1rem;
-    min-width: 90px;
+    width: 30%;
     color: #606060;
 }
 
@@ -285,6 +285,10 @@ input:focus, select:focus, button:focus {
   flex: 0 0 calc(50% - 12px); /* dois por linha */
   display: flex;
   flex-direction: column; 
+}
+
+.nascimentoUsuario, .telefoneUsuario, .cepUsuario, .complementoUsuario, .numeroUsuario, .emailUsuario, .confirmarUsuario, .nomeUsuario, .senhaUsuario{
+  background-color: #ECECEC;
 }
 
 .userTypeBtn {
