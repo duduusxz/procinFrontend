@@ -98,7 +98,7 @@
   .perguntas h2 {
     margin-bottom: 8px;
     font-size: 22px;
-    color: #4a90e2;
+    color: #4169E1;
     font-weight: 600;
   }
   
@@ -144,6 +144,7 @@
     align-self: flex-start  ;
     height: auto;
     min-height: 5vh;
+    background-color: #4169E1;
   }
   
   .valor {
@@ -200,12 +201,12 @@
   .vendedoricone {
     width: 22px;
     height: 22px;
-    color: #4a90e2;
+    color: #4169E1;
     margin-top: 2px;
   }
   
   .visitarperfil {
-    background: #4a90e2;
+    background: #4169E1;
     color: #fff;
     border: none;
     border-radius: 8px;
@@ -219,7 +220,7 @@
   }
   
   .visitarperfil:hover {
-    background: #4a80e2;
+    background: rgb(49, 102, 199);
   }
   
   .visitarperfil:active {
@@ -234,7 +235,7 @@
     border-radius: 0 0 16px 16px;
     box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.04);
     text-align: center;
-    color: #4A90E2;
+    color: #4169E1;
     font-size: 14px;
     font-weight: 500;
     border-radius: 16px;

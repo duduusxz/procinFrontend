@@ -2,6 +2,7 @@ import { useState } from "react";
 import Nav from "../components/nav";
 import NavInferior from "../components/navInferior";
 import styles from "../style/editarProduto.module.css";
+import { useNavigate } from "react-router-dom";
 
 export default function AdicionarProduto() {
   const [form, setForm] = useState({
@@ -15,27 +16,116 @@ export default function AdicionarProduto() {
     tamanho: "",
   });
 
-  // STATE DA FOTO
   const [mostrarFoto, setMostrarFoto] = useState(false);
   const [foto, setFoto] = useState(null);
 
-  // FUNÇÃO PARA INPUTS DO FORM
+  const navigate = useNavigate();
+
+  // Atualiza o estado conforme input
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
-  // FUNÇÃO DE CONFIRMAR INFORMAÇÕES
-  function handleConfirmarInformacoes(e) {
+  // Envia os dados do produto para o backend
+  async function handleSubmit(e) {
     e.preventDefault();
-    console.log("Formulário enviado:", form);
-    setMostrarFoto(true); // abre modal de foto
+
+    try {
+      // Se precisar enviar foto, use FormData (veja nota abaixo)
+      const token = localStorage.getItem("access_token");
+      if (!token) {
+        alert("Usuário não autenticado");
+        navigate("/login"); // Ou rota de login
+        return;
+      }
+
+      const produtoParaEnviar = {
+        nome_produto: form.nome,
+        descricao_produto: form.descricao,
+        categoria_produto: form.categoria,
+        variacao_produto: form.variacao,
+        preco_produto: form.preco,
+        estoque_produto: form.estoque,
+        peso_produto: form.peso,
+        tamanho_produto: form.tamanho,
+      };
+
+      const resposta = await fetch("http://localhost:8081/produtos/criarProduto", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`
+        },
+        body: JSON.stringify(produtoParaEnviar),
+        credentials: "include",
+      });
+
+      const data = await resposta.json();
+
+      if (data.status === false) {
+        throw new Error(data.message || "Erro ao adicionar produto");
+      }
+
+      if (data.status === "success") {
+        alert("Produto adicionado com sucesso!");
+        setMostrarFoto(true); // Se quiser abrir modal da foto
+        // Ou limpe o form
+        setForm({
+          nome: "",
+          descricao: "",
+          categoria: "",
+          variacao: "",
+          preco: "",
+          estoque: "",
+          peso: "",
+          tamanho: "",
+        });
+      }
+    } catch (erro) {
+      alert(erro.message);
+    }
   }
 
-  // FUNÇÃO DE CONFIRMAR FOTO
-  function handleConfirmarFoto(e) {
+  // Função para enviar a foto (exemplo simples)
+  async function handleConfirmarFoto(e) {
     e.preventDefault();
-    console.log("Foto enviada:", foto);
-    setMostrarFoto(false); // fecha modal
+
+    try {
+      if (!foto) {
+        alert("Selecione uma foto");
+        return;
+      }
+
+      const token = localStorage.getItem("access_token");
+      if (!token) {
+        alert("Usuário não autenticado");
+        navigate("/login");
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append("imagem_produto", foto);
+
+      const resposta = await fetch("http://localhost:8081/auth/adicionarFoto", {
+        method: "POST",
+        headers: {
+          "Authorization": `Bearer ${token}`,
+        },
+        body: formData,
+        credentials: "include",
+      });
+
+      const data = await resposta.json();
+
+      if (data.status === "success") {
+        alert("Foto adicionada com sucesso!");
+        setMostrarFoto(false);
+      } else {
+        throw new Error(data.message || "Erro ao enviar foto");
+      }
+    } catch (erro) {
+      alert(erro.message);
+    }
   }
 
   return (
@@ -44,14 +134,10 @@ export default function AdicionarProduto() {
       <NavInferior />
 
       <main className={styles.wrapper}>
-        <h2 className={styles.title}>Adicionar Produtos</h2>
+        <h2 className={styles.title}>Adicionar Produto</h2>
 
-        <form
-          onSubmit={handleConfirmarInformacoes}
-          className={styles.formularioInformacoes}
-        >
+        <form onSubmit={handleSubmit} className={styles.formularioInformacoes}>
           <div className={styles.container}>
-            {/* Cada linha com label + input */}
             <div className={styles.formRow}>
               <label>Nome do produto:</label>
               <input
@@ -155,17 +241,11 @@ export default function AdicionarProduto() {
         </form>
       </main>
 
-      {/* UPLOAD DE FOTO */}
       {mostrarFoto && (
         <div className={styles.fundoContainerFoto}>
           <div className={styles.adicionarFotoContainer}>
-            <form
-              onSubmit={handleConfirmarFoto}
-              className={styles.formularioFoto}
-            >
-              <label className={styles.legendaFoto}>
-                Adicionar foto do Produto
-              </label>
+            <form onSubmit={handleConfirmarFoto} className={styles.formularioFoto}>
+              <label className={styles.legendaFoto}>Adicionar foto do Produto</label>
 
               <input
                 type="file"

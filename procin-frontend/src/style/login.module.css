@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   padding: 0.5rem;
-  background-color: #4a90e2;
+  background-color: #4169E1;
   border-radius: 1rem;
   width: 100%;
   height: auto;
@@ -122,7 +122,7 @@ input:focus, select:focus, button:focus {
 
 .entrarLogin {
   width: 90%;
-  background-color: #4a90e2;
+  background-color: #4169E1;
   color: #ffffff;
   border: none;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
@@ -133,7 +133,7 @@ input:focus, select:focus, button:focus {
 
 .entrarLogin:hover {
   cursor: pointer;
-  background-color: #4a80e2;
+  background-color: rgb(56, 114, 223);
 }
 
 .loginGoogle {

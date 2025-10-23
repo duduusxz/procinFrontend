@@ -11,7 +11,7 @@
 .title {
   font-family: "Poppins";
   font-weight: lighter;
-  color: #4a90e2;
+  color: #4169E1;
   align-self: flex-start;
   font-size: 3rem;
   display: flex;
@@ -28,7 +28,7 @@
 }
 
 .container {
-  background-color: #4a90e2;
+  background-color: #4169E1;
   width: 100%;
   padding: 40px;
   display: flex;
@@ -85,7 +85,7 @@
 }
 
 .adicionarConfirmar {
-  background-color: #4a90e2;
+  background-color: #4169E1;
   color: #fff;
   font-family: "Inter", sans-serif;
   font-weight: 600;
@@ -105,7 +105,7 @@
 
 /* Hover */
 .adicionarConfirmar:hover {
-  background-color: #3a7bd5;
+  background-color: #2769c5;
   box-shadow: 0 6px 16px rgba(74, 144, 226, 0.5);
 }
 
@@ -187,8 +187,8 @@ input, select{
 }
 
 .labelFoto:hover {
-  border-color: #4a90e2;
-  color: #4a90e2;
+  border-color: #4169E1;
+  color: #4169E1;
   background-color: #f0f8ff;
 }
 
@@ -200,7 +200,7 @@ input, select{
   color: white;
   font-weight: bold;
   font-size: 1.2rem;
-  background-color: #4a90e2;
+  background-color: #4169E1;
   border: none;
   border-radius: 10px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
@@ -216,7 +216,7 @@ input, select{
 .formRow label {
   flex: 1;
   font-size: 1.2rem;
-  font-weight: bold;
+  font-weight: lighter;
   color: white;
 }
 

@@ -46,7 +46,7 @@
 .circle {
   width: 55px;
   height: 55px;
-  background: #3b82f6;
+  background: #4169E1;
   color: white;
   border-radius: 50%;
   display: flex;
@@ -70,7 +70,7 @@
 .line {
   flex: 1;
   height: 2px;
-  background: #3b82f6;
+  background: #4169E1;
   margin: 0 8px;
   z-index: 1;
   position: relative;

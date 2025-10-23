@@ -60,7 +60,7 @@
   }
   
   .enviar {
-    background-color: #4A90E2;
+    background-color: #4169E1;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -81,7 +81,7 @@
     width: 50vw;
     padding: 10px;
     margin-bottom: 10px;
-    border: 1.4px solid #4A90E2;
+    border: 1.4px solid #4169E1;
     border-radius: 7px;
     font-size: 16px;
     font-family: Arial, sans-serif;
@@ -94,7 +94,7 @@
   }
   
   .mensagem {
-    color: #4A90E2;
+    color: #4169E1;
     font-weight: bold;
     margin-top: 10px;
   }
