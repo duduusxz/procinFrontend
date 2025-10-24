@@ -9,13 +9,17 @@ export default function NavInferior(){
     navigate("/ods");
   }
 
+   function IrParaMeusPedidos() {
+    navigate("/meusProdutosUsuario");
+  }
+
     return(
         <nav className={styles.navInferior}>
                 <div>
                     <p>Tem no soma</p>
                     <p>Serviços</p>
                     <p>Produtos</p>
-                    <p>Meus pedidos</p>
+                    <p onClick={IrParaMeusPedidos}>Meus pedidos</p>
                     <p onClick={IrParaOds}>ODS's</p>
                 </div>
         </nav>
