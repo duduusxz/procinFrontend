@@ -14,6 +14,7 @@ import PddUsuario from "./pages/produtosUsuario.jsx";
 import Pagamento from "./pages/pagamento.jsx";
 import PerfilVendedor from "./pages/perilVendedor.jsx";
 import StatusPedido from "./pages/statusPedidio.jsx";
+import Ods from "./pages/ods.jsx";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
         <Route path="/finalizarPagamento" element={<Pagamento />}/>
         <Route path="/perfilVendedor" element={<PerfilVendedor />}/>
         <Route path="/statusPedido" element={<StatusPedido />}/>
+        <Route path="/ods" element={<Ods />}/>
       </Routes>
     </div>
   );

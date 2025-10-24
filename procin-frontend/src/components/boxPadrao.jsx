@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { IoLocationSharp } from "react-icons/io5";
 import { FcLike } from "react-icons/fc";
 import styles from '../style/boxPadrao.module.css';
 import Produto from '../assets/produto.png';
+import { useNavigate } from "react-router-dom";
 
 const BoxPadrao = ({
   nomeProduto = "Adicione o nome de um produto",
@@ -10,12 +11,61 @@ const BoxPadrao = ({
   preco = "R$ 00,00",
   imagemSrc = Produto 
 }) => {
+  const navigate = useNavigate();
+  const [favoritado, setFavoritado] = useState(false);
+
+  // Verifica se o produto já está favoritado ao carregar
+  useEffect(() => {
+    const favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+    const existe = favoritos.some(
+      (f) => f.nome === nomeProduto && f.localizacao === localizacao
+    );
+    setFavoritado(existe);
+  }, [nomeProduto, localizacao]);
+
+  // Adicionar produto ao carrinho (e ir pra /carrinho)
   const handleAdicionarCarrinho = () => {
-    console.log(`Produto "${nomeProduto}" adicionado ao carrinho!`);
+    const novoProduto = {
+      nome: nomeProduto,
+      localizacao,
+      preco,
+      imagem: imagemSrc,
+    };
+
+    const carrinhoAtual = JSON.parse(localStorage.getItem("carrinho")) || [];
+    carrinhoAtual.push(novoProduto);
+    localStorage.setItem("carrinho", JSON.stringify(carrinhoAtual));
+
+    navigate("/carrinho");
   };
 
+  // Favoritar produto (sem sair da página)
   const handleFavoritar = () => {
-    console.log(`Produto "${nomeProduto}" favoritado/desfavoritado!`);
+    const favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+    const existe = favoritos.some(
+      (f) => f.nome === nomeProduto && f.localizacao === localizacao
+    );
+
+    let novosFavoritos;
+    if (existe) {
+      // Se já existe, remove
+      novosFavoritos = favoritos.filter(
+        (f) => !(f.nome === nomeProduto && f.localizacao === localizacao)
+      );
+      setFavoritado(false);
+    } else {
+      // Se não existe, adiciona
+      const novoFavorito = {
+        nome: nomeProduto,
+        localizacao,
+        preco,
+        imagem: imagemSrc,
+      };
+      novosFavoritos = [...favoritos, novoFavorito];
+      setFavoritado(true);
+    }
+
+    localStorage.setItem("favoritos", JSON.stringify(novosFavoritos));
   };
 
   return (
@@ -46,11 +96,11 @@ const BoxPadrao = ({
             </button>
             
             <button 
-              className={styles.btnFavoritar}
+              className={`${styles.btnFavoritar} ${favoritado ? styles.favoritado : ""}`}
               onClick={handleFavoritar}
               aria-label="Favoritar Produto"
             >
-              <span role="img" aria-label="Coração"><FcLike /></span> 
+              <FcLike />
             </button>
           </div>
         </div>

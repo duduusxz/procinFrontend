@@ -2,11 +2,11 @@
     background-color: #4169E1;
     padding: 20px;
     color: rgb(255, 255, 255);
-    position: fixed; /* Faz o nav ficar fixo */
-    top: 0; /* Sempre no topo */
+    position: fixed;
+    top: 0;
     left: 0;
-    width: 100%; /* Ocupa toda a largura */
-    z-index: 999; /* Fica acima de outros elementos */
+    width: 100%;
+    z-index: 999;
 }
 
 .menuNav nav {
@@ -103,8 +103,8 @@
     justify-content: center;
     align-items: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: fixed; /* Também fixo, se quiser que acompanhe o scroll */
-    top: 90px; /* Ajuste conforme a altura do menuNav */
+    position: fixed;
+    top: 90px;
     left: 0;
     width: 100%;
     z-index: 998;
@@ -239,6 +239,7 @@
   margin: 0;
   text-align: center;
 }
+
 .produtos {
   padding: 20px;
   background-color: #f5f5f5;
@@ -249,43 +250,110 @@
   justify-content: center;
   gap: 40px;
 }
+
+/* ============================ */
+/* 🛒 CARD DE PRODUTO ATUALIZADO */
+/* ============================ */
+
 .bloco {
-  align-items: start;
-  justify-items: start;
   background-color: #ffffff;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 12px;
   box-shadow: 0 4px 15px rgba(9, 13, 226, 0.1);
   transition: all 0.3s ease;
-  max-width: 400px;
+  max-width: 500px;
   display: flex;
-  flex-direction: row;
+  flex-direction: row; /* Imagem à esquerda, texto à direita */
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
 }
+
 .bloco:hover {
-  transform: translateY(-5px);
+  transform: scale(1.02);
   box-shadow: 0 12px 12px rgba(0, 0, 0, 0.2);
 }
-.bloco img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
+
+.imagemProduto {
+  width: 180px;
+  height: 180px;
+  border-radius: 12px;
   object-fit: cover;
   transition: all 0.3s ease;
 }
-.bloco:hover img {
+
+.imagemProduto:hover {
   transform: scale(1.05);
 }
-.bloco button {
-  background-color: #4169E1;
+
+.inferior {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  height: 100%;
+}
+
+.inferior h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #000;
+  margin: 5px 0;
+}
+
+.inferior p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.botoes {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+/* Botão de adicionar ao carrinho */
+.botoes button {
+  background-color: #4169e1;
   color: white;
   border: none;
-  padding: 10px 10px;
+  padding: 10px 20px; /* aumentei o padding horizontal */
   border-radius: 10px;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  white-space: nowrap; /* impede quebra de linha */
+  min-width: 130px; /* garante espaço pro texto */
 }
+
+.botoes button:hover {
+  background-color: #305cdf;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Ícone do coração */
+.botoes img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.botoes img:hover {
+  transform: scale(1.08);
+}
+
+.estrelas {
+  margin-top: 10px;
+  color: #000;
+  font-weight: 500;
+  font-size: 14px;
+}
+
 .coracaoAtivo {
   animation: pulse 0.5s;
   filter: drop-shadow(0 0 5px #ff0000);
@@ -303,7 +371,6 @@
   }
 }
 
-
 .entreCadastro{
   color: white;
 }
@@ -317,4 +384,31 @@
   font-size: 1.8rem;
   font-weight: 600;
   padding: 0 3rem;
+}
+
+/* ======== SEÇÃO DE PRODUTOS ======== */
+.produtosContainer {
+  margin-top: 40px;
+  padding: 20px;
+}
+
+/* Área com rolagem lateral */
+.produtosLista {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+}
+
+.coracao {
+  width: 28px;
+  opacity: 0.8;
+  transition: 0.2s;
+}
+
+.coracaoAtivo {
+  width: 28px;
+  filter: drop-shadow(0 0 1px rgb(230, 0, 0));
+  transform: scale(1.1);
 }

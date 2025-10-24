@@ -1,84 +1,96 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Nav from "../components/nav.jsx";
-import styles from "../style/carrinho.module.css"
+import styles from "../style/carrinho.module.css";
 import NavInferior from "../components/navInferior.jsx";
-import produto from "../assets/produto.png"
 
 export default function Carrinho() {
+  const [itens, setItens] = useState([]);
+
+  useEffect(() => {
+    const carrinhoSalvo = JSON.parse(localStorage.getItem("carrinho")) || [];
+    setItens(carrinhoSalvo);
+  }, []);
+
+  // Função para remover um item
+  function removerItem(index) {
+    const novoCarrinho = itens.filter((_, i) => i !== index);
+    setItens(novoCarrinho);
+    localStorage.setItem("carrinho", JSON.stringify(novoCarrinho));
+  }
+
+  // Calcula o total
+  const total = itens.reduce(
+    (acc, item) => acc + item.preco * item.quantidade,
+    0
+  );
+
   return (
     <>
-    <Nav />
-    <NavInferior />
-    
-  <div className={styles.wrapper}>
-    <main className={styles.carrinhoContainer}>
-      <h2>Carrinho</h2>
+      <Nav />
+      <NavInferior />
 
-      <table className={styles.carrinhoTabela}>
-        <thead>
-          <tr>
-            <th className={styles.produtosTh}>Produtos</th>
-            <th>Preço</th>
-            <th>Quantidade</th>
-            <th>Preço Total</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <p className={styles.vendedor}>Nome do vendedor</p>
-              <div className={styles.produto}>
-                <div className={styles.imagemFrete}>
-                  <img src={produto} alt="Produto" />
-                  <span className={styles.frete}>Frete grátis</span>
-                </div>
-                <div className={styles.descricao}>
-                  <p>Descrição do produto</p>
-                </div>
+      <div className={styles.wrapper}>
+        <main className={styles.carrinhoContainer}>
+          <h2>Carrinho</h2>
+
+          {itens.length === 0 ? (
+            <p>Seu carrinho está vazio 😢</p>
+          ) : (
+            <table className={styles.carrinhoTabela}>
+              <thead>
+                <tr>
+                  <th className={styles.produtosTh}>Produtos</th>
+                  <th>Preço</th>
+                  <th>Quantidade</th>
+                  <th>Preço Total</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody>
+                {itens.map((item, index) => (
+                  <tr key={index}>
+                    <td>
+                      <p className={styles.vendedor}>{item.vendedor}</p>
+                      <div className={styles.produto}>
+                        <div className={styles.imagemFrete}>
+                          <img src={item.imagem} alt={item.nome} />
+                          <span className={styles.frete}>
+                            Frete {item.frete}
+                          </span>
+                        </div>
+                        <div className={styles.descricao}>
+                          <p>{item.descricao}</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>R$ {item.preco.toFixed(2)}</td>
+                    <td>{item.quantidade}</td>
+                    <td>R$ {(item.preco * item.quantidade).toFixed(2)}</td>
+                    <td className={styles.acoesCell}>
+                      <button
+                        className={styles.removerBtn}
+                        onClick={() => removerItem(index)}
+                      >
+                        Remover
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
+
+          {itens.length > 0 && (
+            <div className={styles.carrinhoFooter}>
+              <div className={styles.total}>
+                <span>Total ({itens.length} itens):</span>
+                <strong>R$ {total.toFixed(2)}</strong>
+                <button className={styles.btnContinuar}>Continuar</button>
               </div>
-            </td>
-            <td>R$ 10,00</td>
-            <td>1</td>
-            <td>R$ 10,00</td>
-          </tr>
-
-          <tr>
-            <td>
-              <p className={styles.vendedor}>Nome do vendedor</p>
-              <div className={styles.produto}>
-                <div className={styles.imagemFrete}>
-                  <img src={produto} alt="Produto" />
-                  <span className={styles.frete}>Frete grátis</span>
-                </div>
-                <div className={styles.descricao}>
-                  <p>Descrição do produto</p>
-                </div>
-              </div>
-            </td>
-            <td>R$ 10,00</td>
-            <td>1</td>
-            <td>R$ 10,00</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div className={styles.carrinhoFooter}>
-        <div className={styles.acoes}>
-          <span>Selecionar Tudo (2)</span>
-          <a href="#">Excluir</a>
-          <a href="#">
-            Mover para 
-          </a>
-        </div>
-
-        <div className={styles.total}>
-          <span>Total (0 item):</span>
-          <strong>R$ 17,00</strong>
-          <button className={styles.btnContinuar}>Continuar</button>
-        </div>
+            </div>
+          )}
+        </main>
       </div>
-    </main>
-    </div>
     </>
   );
 }

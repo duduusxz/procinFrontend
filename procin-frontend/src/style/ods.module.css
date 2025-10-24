@@ -1,0 +1,109 @@
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  margin-top: 10rem;
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  font-weight: bold;
+  color: #1a1a1a;
+}
+
+/* Container das ODS em zig-zag */
+.odsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Card individual da ODS */
+.odsCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  gap: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.odsCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* Texto da ODS */
+.odsTexto {
+  flex: 1;
+}
+
+.odsTexto label {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: block;
+  color: #333;
+}
+
+.odsTexto textarea {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  resize: vertical;
+  font-size: 1rem;
+  transition: border 0.2s ease;
+}
+
+.odsTexto textarea:focus {
+  outline: none;
+  border-color: #3f51b5;
+}
+
+/* Imagem da ODS */
+.odsImagem {
+  flex: 0 0 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.odsImagem img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+/* Alternando zig-zag */
+.odsCard:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+@media (max-width: 768px) {
+  .odsCard {
+    flex-direction: column !important;
+    text-align: center;
+  }
+
+  .odsImagem {
+    margin-bottom: 15px;
+  }
+}
+
+
+.introducao {
+  text-align: center;
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+  color: #555;
+  line-height: 1.6;
+}

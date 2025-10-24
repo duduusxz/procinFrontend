@@ -127,3 +127,33 @@
 .btnContinuar:hover {
   background: rgb(39, 115, 182);
 }
+
+.removerBtn {
+  background-color: #ff4d4f; /* vermelho vibrante */
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-left: 20px; /* distância lateral da célula */
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 8px rgba(255, 0, 0, 0.2);
+}
+
+.removerBtn:hover {
+  background-color: #d90429; /* vermelho mais escuro ao passar o mouse */
+  transform: scale(1.05);
+  box-shadow: 0 3px 10px rgba(255, 0, 0, 0.4);
+}
+
+/* Garante que o botão não fique colado na borda da tabela */
+.acoesCell {
+  padding-right: 30px;
+  text-align: center;
+}
+
+/* Se quiser dar mais espaço geral dentro do container */
+.carrinhoContainer {
+  padding: 40px;
+}

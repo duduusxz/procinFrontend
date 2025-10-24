@@ -6,7 +6,7 @@ import NavInferior from "../components/navInferior";
 import ProdutoImagem1 from "../assets/produto.jpg"
 import ProdutoImagem2 from "../assets/produto2.jpg"
 import ProdutoImagem3 from "../assets/produto3.jpg"
-import ProdutoImagem4 from "../assets/produto4.jpeg"
+import ProdutoImagem4 from "../assets/produto4.jpg"
 import { useNavigate } from "react-router-dom";
 
 export default function Pergunta() {

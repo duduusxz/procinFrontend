@@ -27,6 +27,10 @@ function PerfilLateral({ onClose }) {
         navigate("/meusProdutosVendedor")
       }
 
+      function IrParaPerfilVendedor(){
+        navigate("/perfilVendedor")
+      }
+
   return (
         <div className={styles.overlay} onClick={handleClose}>
       <div
@@ -49,7 +53,7 @@ function PerfilLateral({ onClose }) {
           <p className={styles.descricaoUsuario}>
             Descrição sobre usuário. Lorem ipsum dolor sit amet consectetur.
           </p>
-          <button>Editar perfil</button>
+          <button onClick={IrParaPerfilVendedor}>Editar perfil</button>
           <button>Mensagens</button>
           <button onClick={IrParaProdutosVendedor}>Meus produtos</button>
           <hr />

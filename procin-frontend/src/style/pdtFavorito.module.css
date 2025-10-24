@@ -1,12 +1,29 @@
+/* Wrapper principal da página */
 .wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #f3f3f3;
-  padding: 60px 0;
-  min-height: 100vh;
+  max-width: 1200px; /* limita largura da tela */
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 80vh; /* altura mínima para o conteúdo */
+  box-sizing: border-box;
   margin-top: 10rem;
 }
+
+/* Lista de produtos/favoritos */
+.produtosLista {
+  display: flex;
+  flex-wrap: wrap; /* quebra linha se necessário */
+  gap: 20px; /* espaço entre os cards */
+  justify-content: flex-start;
+}
+
+/* Mensagem de vazio */
+.vazio {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  margin-top: 60px;
+}
+
 
 /* Parte de cima e de baixo: cards lado a lado */
 .cima,
@@ -27,4 +44,11 @@
     align-items: center;
     gap: 20px;
   }
+}
+
+.vazio {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  margin-top: 60px;
 }
